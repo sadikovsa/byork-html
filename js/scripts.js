@@ -93,6 +93,196 @@ drMenu.style.height = "calc(100vh - " + header.offsetHeight + "px)";
 
 
  
+// Аккордеон
+function accordion() {
+    const items = document.querySelectorAll('.accordion__item-trigger')
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentNode
+            if (parent.classList.contains('accordion__item-active')) {
+                parent.classList.remove('accordion__item-active')
+            } else {
+                document
+                    .querySelectorAll('.accordion__item')
+                    .forEach(child => child.classList.remove('accordion__item-active'))   
+                parent.classList.add('accordion__item-active')
+            }
+        })
+    })
+}
+accordion() 
+
+
+var simplemaps_countrymap_mapdata={
+  main_settings: {
+    //General settings
+		width: "300", //or 'responsive'
+    background_color: "#FFFFFF",
+    background_transparent: "yes",
+    border_color: "#ffffff",
+    pop_ups: "detect",
+    
+		//State defaults
+		state_description: "State description",
+    state_color: "#88A4BC",
+    state_hover_color: "#3B729F",
+    state_url: "",
+    border_size: 1.5,
+    all_states_inactive: "no",
+    all_states_zoomable: "yes",
+    
+		//Location defaults
+		location_description: "Location description",
+    location_url: "",
+    location_color: "#FF0067",
+    location_opacity: 0.8,
+    location_hover_opacity: 1,
+    location_size: 25,
+    location_type: "square",
+    location_image_source: "frog.png",
+    location_border_color: "#FFFFFF",
+    location_border: 2,
+    location_hover_border: 2.5,
+    all_locations_inactive: "no",
+    all_locations_hidden: "no",
+    
+		//Label defaults
+		label_color: "#d5ddec",
+    label_hover_color: "#d5ddec",
+    label_size: 22,
+    label_font: "Arial",
+    hide_labels: "no",
+    hide_eastern_labels: "no",
+   
+		//Zoom settings
+		zoom: "yes",
+    manual_zoom: "yes",
+    back_image: "no",
+    initial_back: "no",
+    initial_zoom: "-1",
+    initial_zoom_solo: "no",
+    region_opacity: 1,
+    region_hover_opacity: 0.6,
+    zoom_out_incrementally: "yes",
+    zoom_percentage: 0.99,
+    zoom_time: 0.5,
+    
+		//Popup settings
+		popup_color: "white",
+    popup_opacity: 0.9,
+    popup_shadow: 1,
+    popup_corners: 5,
+    popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
+    popup_nocss: "no",
+    
+		//Advanced settings
+		div: "map",
+    auto_load: "yes",
+    url_new_tab: "no",
+    images_directory: "default",
+    fade_time: 0.1,
+    link_text: "View Website"
+  },
+  state_specific: {
+    UZB354: {
+      name: "Bukhoro",
+      description: "default",
+      color: "default",
+      hover_color: "default",
+      url: "default"
+    },
+    UZB355: {
+      name: "Khorezm"
+    },
+    UZB356: {
+      name: "Karakalpakstan"
+    },
+    UZB357: {
+      name: "Navoi"
+    },
+    UZB358: {
+      name: "Samarkand"
+    },
+    UZB361: {
+      name: "Kashkadarya"
+    },
+    UZB362: {
+      name: "Surkhandarya"
+    },
+    UZB363: {
+      name: "Andijon"
+    },
+    UZB364: {
+      name: "Ferghana"
+    },
+    UZB365: {
+      name: "Namangan"
+    },
+    UZB370: {
+      name: "Jizzakh"
+    },
+    UZB371: {
+      name: "Sirdaryo"
+    },
+    UZB372: {
+      name: "Tashkent"
+    },
+    UZB4828: {
+      name: "Tashkent"
+    }
+  },
+  locations: {
+    "0": {
+      lat: "41.316667",
+      lng: "69.25",
+      name: "Tashkent"
+    }
+  }
+}; 
+if(window.location.toString().indexOf('product.htm')>0)
+{
+    // TABS
+    
+    function tabs(headerSelector, tabSelector, contentSelector, activeClass, display='flex') {
+        const header = document.querySelector(headerSelector),
+              tab = document.querySelectorAll(tabSelector),
+              content = document.querySelectorAll(contentSelector)
+        function hideTabContent() {
+            content.forEach(item => {
+                item.style.display = 'none'
+            });
+            tab.forEach(item => {
+                item.classList.remove(activeClass)
+            });
+        }
+        function showTabContent(i = 0) {
+           content[i].style.display = display
+           tab[i].classList.add(activeClass)
+        }    
+        hideTabContent()
+        showTabContent()
+        header.addEventListener('click', e => {
+            const target = e.target
+            if (target.classList.contains(tabSelector.replace(/\./, '')) || 
+            target.parentNode.classList.contains(tabSelector.replace(/\./, ''))) {
+                tab.forEach((item, i) => {
+                    if ( target == item || target.parentNode == item ) {
+                        hideTabContent()
+                        showTabContent(i)
+                    }
+                });
+            }
+        })
+    }
+    
+    // ПЕРВЫЙ аргумент - класс всего нашего хедера табов.
+    // ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
+    // ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
+    // ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
+    tabs( '.tabs__header' ,'.tabs__header-item', '.tabs__content-item', 'active')
+}
+
+
 const swiperHero = new Swiper('.hero__swiper', {
     slidesPerView: 1,
     spaceBetween: 20,
@@ -674,196 +864,6 @@ const historySwiper = new Swiper('.historys__swiper', {
         swiper: historySwiperThumbs,
     },
 }); 
-// Аккордеон
-function accordion() {
-    const items = document.querySelectorAll('.accordion__item-trigger')
-    items.forEach(item => {
-        item.addEventListener('click', () => {
-            const parent = item.parentNode
-            if (parent.classList.contains('accordion__item-active')) {
-                parent.classList.remove('accordion__item-active')
-            } else {
-                document
-                    .querySelectorAll('.accordion__item')
-                    .forEach(child => child.classList.remove('accordion__item-active'))   
-                parent.classList.add('accordion__item-active')
-            }
-        })
-    })
-}
-accordion() 
-
-
-var simplemaps_countrymap_mapdata={
-  main_settings: {
-    //General settings
-		width: "300", //or 'responsive'
-    background_color: "#FFFFFF",
-    background_transparent: "yes",
-    border_color: "#ffffff",
-    pop_ups: "detect",
-    
-		//State defaults
-		state_description: "State description",
-    state_color: "#88A4BC",
-    state_hover_color: "#3B729F",
-    state_url: "",
-    border_size: 1.5,
-    all_states_inactive: "no",
-    all_states_zoomable: "yes",
-    
-		//Location defaults
-		location_description: "Location description",
-    location_url: "",
-    location_color: "#FF0067",
-    location_opacity: 0.8,
-    location_hover_opacity: 1,
-    location_size: 25,
-    location_type: "square",
-    location_image_source: "frog.png",
-    location_border_color: "#FFFFFF",
-    location_border: 2,
-    location_hover_border: 2.5,
-    all_locations_inactive: "no",
-    all_locations_hidden: "no",
-    
-		//Label defaults
-		label_color: "#d5ddec",
-    label_hover_color: "#d5ddec",
-    label_size: 22,
-    label_font: "Arial",
-    hide_labels: "no",
-    hide_eastern_labels: "no",
-   
-		//Zoom settings
-		zoom: "yes",
-    manual_zoom: "yes",
-    back_image: "no",
-    initial_back: "no",
-    initial_zoom: "-1",
-    initial_zoom_solo: "no",
-    region_opacity: 1,
-    region_hover_opacity: 0.6,
-    zoom_out_incrementally: "yes",
-    zoom_percentage: 0.99,
-    zoom_time: 0.5,
-    
-		//Popup settings
-		popup_color: "white",
-    popup_opacity: 0.9,
-    popup_shadow: 1,
-    popup_corners: 5,
-    popup_font: "12px/1.5 Verdana, Arial, Helvetica, sans-serif",
-    popup_nocss: "no",
-    
-		//Advanced settings
-		div: "map",
-    auto_load: "yes",
-    url_new_tab: "no",
-    images_directory: "default",
-    fade_time: 0.1,
-    link_text: "View Website"
-  },
-  state_specific: {
-    UZB354: {
-      name: "Bukhoro",
-      description: "default",
-      color: "default",
-      hover_color: "default",
-      url: "default"
-    },
-    UZB355: {
-      name: "Khorezm"
-    },
-    UZB356: {
-      name: "Karakalpakstan"
-    },
-    UZB357: {
-      name: "Navoi"
-    },
-    UZB358: {
-      name: "Samarkand"
-    },
-    UZB361: {
-      name: "Kashkadarya"
-    },
-    UZB362: {
-      name: "Surkhandarya"
-    },
-    UZB363: {
-      name: "Andijon"
-    },
-    UZB364: {
-      name: "Ferghana"
-    },
-    UZB365: {
-      name: "Namangan"
-    },
-    UZB370: {
-      name: "Jizzakh"
-    },
-    UZB371: {
-      name: "Sirdaryo"
-    },
-    UZB372: {
-      name: "Tashkent"
-    },
-    UZB4828: {
-      name: "Tashkent"
-    }
-  },
-  locations: {
-    "0": {
-      lat: "41.316667",
-      lng: "69.25",
-      name: "Tashkent"
-    }
-  }
-}; 
-if(window.location.toString().indexOf('product.htm')>0)
-{
-    // TABS
-    
-    function tabs(headerSelector, tabSelector, contentSelector, activeClass, display='flex') {
-        const header = document.querySelector(headerSelector),
-              tab = document.querySelectorAll(tabSelector),
-              content = document.querySelectorAll(contentSelector)
-        function hideTabContent() {
-            content.forEach(item => {
-                item.style.display = 'none'
-            });
-            tab.forEach(item => {
-                item.classList.remove(activeClass)
-            });
-        }
-        function showTabContent(i = 0) {
-           content[i].style.display = display
-           tab[i].classList.add(activeClass)
-        }    
-        hideTabContent()
-        showTabContent()
-        header.addEventListener('click', e => {
-            const target = e.target
-            if (target.classList.contains(tabSelector.replace(/\./, '')) || 
-            target.parentNode.classList.contains(tabSelector.replace(/\./, ''))) {
-                tab.forEach((item, i) => {
-                    if ( target == item || target.parentNode == item ) {
-                        hideTabContent()
-                        showTabContent(i)
-                    }
-                });
-            }
-        })
-    }
-    
-    // ПЕРВЫЙ аргумент - класс всего нашего хедера табов.
-    // ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
-    // ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
-    // ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
-    tabs( '.tabs__header' ,'.tabs__header-item', '.tabs__content-item', 'active')
-}
-
- 
 /*
  * anime.js v3.2.1
  * (c) 2020 Julian Garnier
@@ -1037,7 +1037,7 @@ function anim() {
         .addTo(controller);
 
     let targetSlider = document.querySelector('.features__slider');
-    let pagList = document.querySelectorAll('.pagination');
+    let pagList = document.querySelectorAll('.features__pagination');
 
     if (targetSlider) {
         let numb1 = anime({
@@ -1066,26 +1066,27 @@ function anim() {
             fadeEffect: {
                 crossFade: true
             },
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                bulletElement: 'span',
-                clickable: true,
-                bulletClass: 'pagination',
-                bulletActiveClass: 'pagination-active',
-                clickable: false,
-            },
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+            //            // If we need pagination
+            //        pagination: {
+            //            el: '.swiper-pagination',
+            //            type: 'bullets',
+            //            bulletElement: 'span',
+            //            clickable: true,
+            //            bulletClass: 'pagination',
+            //            bulletActiveClass: 'pagination-active',
+            //            clickable: false,
+            //        },
 
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
+            //            // Navigation arrows
+            //            navigation: {
+            //                nextEl: '.swiper-button-next',
+            //                prevEl: '.swiper-button-prev',
+            //            },
+
+            //            // And if we need scrollbar
+            //            scrollbar: {
+            //                el: '.swiper-scrollbar',
+            //            },
             on: {
                 init: function () {
                     document.querySelector('.slider-numb-1').textContent = '0';
@@ -1101,10 +1102,12 @@ function anim() {
 
 
         scene1.on("progress", function (event) {
+
             if (event.scrollDirection === 'FORWARD') {
                 if (event.progress <= 0.33) {
                     mySwiper.slideTo(0);
                     pagList[0].classList.add('active');
+                    console.log(pagList[0])
                 } else if (event.progress <= 0.5) {
                     mySwiper.slideTo(1);
                     pagList[1].classList.add('active');
