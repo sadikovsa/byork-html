@@ -495,82 +495,66 @@
             })
         }
     </script>
-<section class="company-detail">
-   <div class="container">
-      <div class="detail-cards">
-         <div class="detail-cards__card-blue">
-            <h4>Детали компании</h4>
-         </div>
-         <div class="detail-cards__card">
-            <div class="number">
-
-               <h4>400 </h4><span>+</span>
+<section class="company__detail">
+    <div class="container">
+        <div class="detail__wrapper">
+            <div class="detail__item">
+                <h3 class="detail__title">Детали компании</h3>
             </div>
-            <p>Количество покупателей</p>
-         </div>
-         <div class="detail-cards__card">
-            <div class="number">
-
-               <h4>400 </h4><span>+</span>
+            <div class="detail__item">
+                <h3 class="detail__number">400+</h3>
+                <p class="detail__text">Количество покупателей</p>
             </div>
-            <p>Количество покупателей</p>
-         </div>
-         <div class="detail-cards__card">
-            <div class="number">
-
-               <h4>400 </h4><span>+</span>
+            <div class="detail__item">
+                <h3 class="detail__number">2</h3>
+                <p class="detail__text">Количество офисов</p>
             </div>
-            <p>Количество покупателей</p>
-         </div>
-      </div>
-      <div class="detail-cards__two">
-         <div class="detail-cards__card">
-            <div class="number">
-
-               <h4>400 </h4><span>+</span>
+            <div class="detail__item">
+                <h3 class="detail__number">$3,45м</h3>
+                <p class="detail__text">Средний годовой оборот за последние 4 года</p>
             </div>
-            <p>Количество покупателей</p>
-         </div>
-         <div class="detail-cards__card">
-            <div class="number">
-
-               <h4>400 </h4><span>+</span>
+            <div class="detail__item">
+                <h3 class="detail__number">5 900</h3>
+                <p class="detail__text">Количество проданных оборудований и приборов</p>
             </div>
-            <p>Количество покупателей</p>
-         </div>
-         <div class="detail-img__card banner">
-            <img class="banner_image" src="./img/banner.png" alt="">
-            <div class="item-card">
-               <p class="title">OOO “BYORK” (бывшая OOO “Orient Med”) основанная в 2015 году на сегодняшний день
-                  является одной  оборудования в
-                  Узбекистане. . </p>
-
-               <div class="about_companie">
-                  <p>Подробнее о компании</p>
-                  <img src="./img/preww.svg" alt="">
-               </div>
+            <div class="detail__item">
+                <h3 class="detail__number">22</h3>
+                <p class="detail__text">Количество сотрудников</p>
             </div>
-         </div>
-      </div>
-   </div>
+            <div class="detail__item detail__item-big">
+                <img src="./img/doctor.png" alt="doctor">
+                <p>OOO “BYORK” (бывшая OOO “Orient Med”) основанная в 2015 году на сегодняшний день является одной из самых узнаваемых торговых компаний на рынке медицинского оборудования в Узбекистане. </p>
+                <a href="#" class="detail__link">Подробнее о компании
+                    <span>
+                        <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.06955 9.35544C0.107298 9.43161 0.188755 9.52731 0.353656 9.68942C0.548358 9.87888 0.605974 9.92184 0.701338 9.957C0.844385 10.0097 0.961603 10.0117 1.0967 9.96091C1.19405 9.92575 1.3967 9.73239 3.55035 7.61325C5.38412 5.80856 5.90862 5.28317 5.93843 5.21481C5.96624 5.15622 5.98015 5.08395 5.98015 4.99997C5.98015 4.74216 6.12717 4.90231 3.55035 2.37106C1.31922 0.177704 1.21789 0.0800469 1.10664 0.0409844C0.961603 -0.01175 0.846371 -0.01175 0.701338 0.0429375C0.605974 0.0761406 0.548358 0.121063 0.355642 0.310516C0.0695496 0.589813 0.0318013 0.656219 0.0298145 0.869109C0.0298145 0.982391 0.0397483 1.04684 0.0675629 1.10348C0.0933907 1.15622 0.729153 1.79684 2.04438 3.09177L3.98346 4.99997L2.0424 6.91013C0.975511 7.95895 0.0874308 8.84958 0.0675632 8.88669C0.0476957 8.9277 0.0298149 9.01364 0.0258414 9.10153C0.0178943 9.22848 0.0238546 9.26169 0.06955 9.35544Z" fill="#004D8C" />
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <p class="detail__desc">
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi neque necessitatibus enim dolorem nemo iusto, iste, quam iure reprehenderit. Eius unde quaerat, ipsam excepturi quisquam doloribus aut officia vero odio!</span><span>Ipsa facilis <strong>laboriosam doloribus hic</strong>, similique cupiditate odit, nostrum nulla quod assumenda qui. Non necessitatibus est, ullam possimus alias consequuntur, <strong>numquam provident</strong> asperiores in recusandae vero nisi assumenda quos sapiente!</span>
+        </p>
+    </div>
 </section>
 
 <script>
-   window.addEventListener('load', () => {
-      let count = document.querySelectorAll('.detail-cards__card h4')
+    window.addEventListener('load', () => {
+        let count = document.querySelectorAll('.detail-cards__card h4')
 
-      for (let i = 0; i < count.length; i++) {
-         count[i].innerHTML = 0;
-         const interval = setInterval(() => {
-            count[i].innerHTML = +count[i].innerHTML + 10
-         }, 50);
+        for (let i = 0; i < count.length; i++) {
+            count[i].innerHTML = 0;
+            const interval = setInterval(() => {
+                count[i].innerHTML = +count[i].innerHTML + 10
+            }, 50);
 
-         setTimeout(() => {
-            clearInterval(interval)
-         }, 2000);
-      }
+            setTimeout(() => {
+                clearInterval(interval)
+            }, 2000);
+        }
 
-   })
+    })
 </script>
 
 

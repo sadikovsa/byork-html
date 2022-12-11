@@ -1107,7 +1107,6 @@ function anim() {
                 if (event.progress <= 0.33) {
                     mySwiper.slideTo(0);
                     pagList[0].classList.add('active');
-                    console.log(pagList[0])
                 } else if (event.progress <= 0.5) {
                     mySwiper.slideTo(1);
                     pagList[1].classList.add('active');
