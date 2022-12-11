@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Landing Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Блог 1</title>
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="icon" href="./img/favicon.svg">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body class="main__body">
+
+<!-- Header -->
+<header>
+    <!-- Navbar -->
+    <div class="navbar-top">
+        <div class="container">
+            
+            <div class="navbar-top__wrapper">
+                
+                <div class="navbar-top__box box__1">
+                    <div class="logo-top">
+                        <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                
+                <div class="navbar-top__box box__2">
+                    <p class="navbar-top__text">Медицинское оборудование <br> от лучших производителей</p>
+                    
+                    <p class="navbar-top__text navbar-top__text-since">
+                        <img src="./img/star-icon.png" alt="star">
+                        С 2015 года на рынке
+                    </p>
+                    
+                    <select class="language-select" name="language" id="language">
+                        <option value="rus">Rus</option>
+                        <option value="rus">Eng</option>
+                        <option value="rus">Uzb</option>
+                    </select>
+                    
+                    <a class="catalog-icon" href="#">
+                        <img src="./img/icon-1.png" alt="icon">
+                    </a>
+                </div>
+                
+                <div class="navbar-top__box box__3">
+                    <p class="navbar-top__text">режим работы</p>
+                    <p class="navbar-top__text">
+                        пн-пт: <span class="navbar-top__text-bold">09:00 - 18:00</span>
+                    </p>
+                </div>
+                
+                <div class="navbar-top__box box__4">
+                    <img src="./img/main-icon.png" alt="mail-icon">
+                    <a class="navbar-top__mail navbar-top__text-bold" href="email:info@byork.uz">info@byork.uz</a>
+                </div>
+                
+                <div class="navbar-top__box box__5">
+                    <p class="navbar-top__text navbar-top__text-bold">+988 71 208 27 72</p>
+                    <a href="tel:+988712082772">перезвоните мне</a>
+                </div>
+                
+            </div>
+            
+            <div class="navbar-top__inner">
+                <select class="language-select" name="language" id="language">
+                    <option value="rus">Rus</option>
+                    <option value="rus">Eng</option>
+                    <option value="rus">Uzb</option>
+                </select>
+                
+                <a class="navbar-top__mail navbar-top__text-bold" href="mailto:info@byork.uz">info@byork.uz</a>
+                
+                <p class="navbar-top__text text-time">
+                    пн-пт: 
+                    <span class="navbar-top__text-bold"> 09:00 - 18:00</span>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <nav>
+        <div class="container header-container">
+            
+            <div class="navbar">
+                <div class="burger">
+                    <span></span>
+                </div>
+                
+                <div class="logo-mini">
+                    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+                </div>
+                
+                <ul class="menu" id="menu">
+                    <li class="menu__item">
+                        <a  class="menu__item-link dropdown-btn" id="dropdownBtn" data-scroll>
+                            <button class="dropdown-btn-toggle dropdown-btn-open">
+                                <img src="./img/header/4dots-icon.png" alt="icon" />
+                                Каталог товаров</button>
+                                <button class="dropdown-btn-toggle dropdown-btn-close"><img src='./img/close.png'> Закрыть</button>
+                            </a>
+                        </li>
+                        <li class="menu__item"><a href="index.html" class="menu__item-link" data-scroll>Главная</a></li>
+                        <li class="menu__item"><a href="mission.html" class="menu__item-link" data-scroll>О компании</a></li>
+                        <li class="menu__item"><a href="services.html" class="menu__item-link" data-scroll>Сервисный отдел</a></li>
+                        <li class="menu__item"><a href="partners.html" class="menu__item-link" data-scroll>Партнеры</a></li>
+                        <li class="menu__item"><a href="contacts.html" class="menu__item-link" data-scroll>Контакты</a></li>
+                        <li class="menu__item"><a href="blog-list.html" class="menu__item-link" data-scroll>Блог</a></li>
+                        <li class="menu__item"><a href="news.html" class="menu__item-link" data-scroll>Новости</a></li>
+                        <li class="menu__item menu__dropdown-credit"><a href="#" class="menu__item-link " data-scroll>Рассрочка <img src="./img/arrow-white.png" alt="icon"></a>
+                        </li>
+                    </ul>
+                    
+                    <a class="catalog-icon-mini" href="#">
+                        <img src="./img/icon-1.png" alt="icon">
+                    </a>
+                    
+                </div>
+                
+                <img class="line-null" src="./img/line0.png" alt="line">
+                <div class="body-effect">
+                    <div class="popup__search">
+                        <div class="popup-wrap">
+                            <div class="popup__search-wrapper">
+                                <input type="search" placeholder="Write your question...">
+                                <button class="catalog-icon-search">
+                                    <img src="./img/search.png" alt="icon">
+                                </button>
+                            </div>
+                            <div class="popular__searchs">
+                                <div>
+                                    <h4>Lorem, ipsum.</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                </div>
+                                <div class="popular-search__imgs">
+                                    <img src="../img/product/prod-4.png" alt="product" width="40" height="40">
+                                </div>
+                            </div> 
+                            <div class="popular__searchs">
+                                <div>
+                                    <h4>Lorem, ipsum.</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                </div>
+                                <div class="popular-search__imgs">
+                                    <img src="../img/product/prod-4.png" alt="product" width="40" height="40">
+                                </div>
+                            </div>
+                            
+                            <ul class="popup__search-list">
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                            </ul>
+                            <button class="close-btns">
+                                <img src="./img/close.png" alt="icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <button class="catalog-icon-search search-btns">
+                    <img src="./img/search.png" alt="icon">
+                </button>
+            </div>
+        </nav>
+        
+        <div class="dropdown-menu" id="dropdownMenu">
+            
+            <div class="container">
+                <div class="catalog-list__wrapper">
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Акушерство и гинекология</p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 9 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-1.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Гибкая эндоскопия</p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 2 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-2.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Мобильные кабинеты </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 3 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-3.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Оторино- ларингология </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 8 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-4.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Реанимация </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 2 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-5.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Рентгенология и томография</p>
+                            
+                            <a class="catalog-list__item-link" href="02_01.html">всего 3 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-6.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Скорая помощь </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 1 товар</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-7.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Стерилизация </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 6 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-8.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Урология </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 5 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-9.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Физиотерапия и реабилитация </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 4 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-10.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Функциональная диагностика </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 2 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-11.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Хирургия </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 7 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-12.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Ветеринария </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 3 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-13.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__offer catalog-list__item">
+                        
+                        <img class="catalog-list__offer-img" src="./img/catalog-list/hand-1.png" alt="hand-img">
+                        
+                        <div class="catalog-list__offer-box">
+                            <p class="catalog-list__offer-title"><span>Скачайте полный каталог - 148 товаров </span> .pdf 54.21MB</p>
+                        </div>
+                        
+                        <a class="catalog-list__offer-btn btn" href="#">Скачать</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="bg-gray" id="bgGray">
+            
+        </div>
+        
+    </header>
+    
+    
+    
+    
+    <script>
+        const btnss = document.querySelector(".search-btns")
+        const closeBtn = document.querySelector(".close-btns")
+        const body = document.querySelector(".body-effect")
+        const searchInput = document.querySelector(".popup__search")
+        btnss.addEventListener("click", () => {
+            body.classList.add("active-body-effect")
+            searchInput.classList.add("popup__search-active")
+            document.querySelector(".navbar").style.display = 'none'
+            document.querySelector(".search-btns").style.display = 'none'
+        })
+        closeBtn.addEventListener("click", () => {
+            document.querySelector(".navbar").style.display = 'flex'
+            document.querySelector(".search-btns").style.display = 'flex'
+            body.classList.remove("active-body-effect")
+            searchInput.classList.remove("popup__search-active")
+        })
+    </script>
+    
+    
+
+<!-- Main Page -->
+<main>
+
+<!-- Blog-1 -->
+<section class="blog">
+    <div class="blog__top">
+        <div class="container-mini">
+            <div class="blog__top-wrapper">
+
+                <a class="btn__back" href="blog-list.html">
+                    <img src="./img/category/left-arrow.png" alt="arrow">
+                    назад в блог
+                </a>
+
+                <p class="blog__top-date">10 сентября 2019</p>
+
+                <p class="blog__top-title">Некоторое название статьи в блоге</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container-mini mini-2">
+        <div class="blog__wrapper">
+            <div class="blog__tags">
+                <a class="blog__tags-item" href="#">хештэг</a>
+                <a class="blog__tags-item" href="#">новости</a>
+                <a class="blog__tags-item" href="#">оборудование</a>
+                <a class="blog__tags-item" href="#">еще что-то</a>
+                <a class="blog__tags-item" href="#">хештэг</a>
+            </div>
+            
+            <p class="blog__text">Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны рамки и место обучения кадров <span class="bold">позволяет выполнять важные</span> задания по разработке модели развития. Не следует, однако забывать, что укрепление и развитие структуры требуют от нас анализа существенных финансовых и административных условий. Повседневная практика показывает, что рамки и место обучения кадров требуют от нас анализа новых предложений.</p>
+            
+            <p class="blog__pretext bold"><span class="green">Значимость этих проблем настолько очевидна,</span> что постоянное информационно-пропагандистское обеспечение нашей.</p>
+            
+            <p class="blog__text">Однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны рамки и место обучения кадров <span class="bold">позволяет выполнять важные</span> задания по разработке модели развития. Не следует, однако забывать, что укрепление и развитие структуры требуют от нас анализа существенных финансовых.</p>
+
+
+            <div class="blog__swiper swiper">
+
+                <div class="blog__slider swiper-wrapper">
+    
+                    <div class="blog__slide swiper-slide">
+                        <img class="blog__img" src="./img/blog/blog-slide-1.png" alt="blog-slide">    
+                    </div>
+
+                    <div class="blog__slide swiper-slide">
+                        <img class="blog__img" src="./img/blog/blog-slide-1.png" alt="blog-slide">    
+                    </div>
+
+                    <div class="blog__slide swiper-slide">
+                        <img class="blog__img" src="./img/blog/blog-slide-1.png" alt="blog-slide">    
+                    </div>
+
+                </div>
+    
+                <div class="blog-prev swiper-button-prev">
+                    <svg width="24" height="24" fill="white"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+                </div>
+                <div class="blog-next swiper-button-next">
+                    <svg width="24" height="24" fill="white"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+                </div>
+    
+            </div>
+
+            <p class="blog__text">Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны рамки и место обучения кадров <span class="bold">позволяет выполнять важные</span> задания по разработке модели развития. Не следует, однако забывать, что укрепление и развитие структуры требуют от нас анализа существенных финансовых и административных условий. Повседневная практика показывает, что рамки и место обучения кадров требуют от нас анализа новых предложений.</p>
+            
+
+            <div class="blog__links">
+                <a class="blog__links-item" href="#">название кнопки</a>
+                <a class="blog__links-item" href="#">ссылка на товар</a>
+                <a class="blog__links-item" href="#">название кнопки</a>
+                <a class="blog__links-item" href="#">ссылка на товар</a>
+            </div>
+
+            <ul class="blog__menu">
+                <li class="blog__menu-item">• двухканальный инжектор SinoPower-D для введения контрастного вещества при компьютерной томографии от Sino MDT.</li>
+                <li class="blog__menu-item">• удобная, надежная и безопасная система с двумя пультами управления.</li>
+                <li class="blog__menu-item">• подходит для работы с компьютерными томографами любых марок. </li>
+                <li class="blog__menu-item">• поддерживает шприцы 200 мл. </li>
+            </ul>
+
+            <div class="blog__video">
+                <a class="blog__video-link" href="#">
+                    <img class="blog__video-icon" src="./img/blog/youtube.png" alt="YT">
+                </a>
+            </div>
+
+            <div class="blog__box">
+                <p class="blog__pretitle">Подзаголовок какой-то</p>
+
+                <p class="blog__text">Однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке дальнейших направлений развития. С другой стороны рамки и место обучения кадров <span class="bold">позволяет выполнять важные</span> задания по разработке модели развития. Не следует, однако забывать, что укрепление и развитие структуры требуют от нас анализа существенных финансовых.</p>
+            </div>
+
+            <div class="blog__quote">
+                <p class="blog__text">Задача организации, в особенности же новая модель организационной деятельности требуют определения и уточнения направлений прогрессивного развития. Таким образом дальнейшее развитие различных форм деятельности требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. Товарищи! укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.</p>
+            </div>
+
+            <p class="blog__text">С другой стороны рамки и место обучения кадров <span class="bold">позволяет выполнять важные</span> задания по разработке модели развития. Не следует, однако забывать, что укрепление и развитие структуры требуют от нас анализа существенных финансовых и административных условий. Повседневная практика показывает, что рамки и место обучения кадров требуют от нас анализа новых предложений.</p>
+
+            <div class="blog__footer">
+                <a class="btn__back" href="blog-list.html">
+                    <img src="./img/category/left-arrow.png" alt="arrow">
+                    назад в блог
+                </a>
+
+                <div class="blog__share">
+                    поделится
+                    <a class="blog__share-link" href="#">
+                        <img src="./img/blog/telegram.png" alt="share-icon">
+                    </a>
+                    <a class="blog__share-link" href="#">
+                        <img src="./img/blog/facebook.png" alt="share-icon">
+                    </a>
+                    <a class="blog__share-link" href="#">
+                        <img src="./img/blog/instagram.png" alt="share-icon">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Maybe-2 -->
+<section class="maybe-2 maybe">
+    <div class="container-mini">
+
+        <div class="maybe-2__grid">
+            <p class="maybe-2__title section-title">Товары в этой статье</p>
+
+            <a class="maybe-2__top-btn" href="#">перейти в блог</a>
+
+            <div class="maybe-2__wrapper">
+
+                <div class="category__product">
+                    <img class="category__product-img" src="./img/category/product-1.png" alt="product">
+
+                    <p class="category__product-name">Openmark</p>
+
+                    <p class="category__product-prename">инжекторы</p>
+
+                    <p class="category__product-no-have">
+                        <img src="./img/category/have.png" alt="ellipse">
+                         в наличии
+                    </p>
+
+                    <a class="category__product-tex" href="#">технические характеристики</a>
+
+                    <p class="category__product-price section-pretitle">100000 руб.</p>
+
+                    <a class="category__product-btn btn" href="product.html">Запросить КП</a>
+                </div>
+
+                <div class="category__product">
+                    <img class="category__product-img" src="./img/category/product-2.png" alt="product">
+
+                    <p class="category__product-name">Openmark</p>
+
+                    <p class="category__product-prename">инжекторы</p>
+
+                    <p class="category__product-no-have">
+                        <img src="./img/category/have.png" alt="ellipse">
+                        в наличии
+                    </p>
+
+                    <a class="category__product-tex" href="#">технические характеристики</a>
+
+                    <p class="category__product-price section-pretitle">100000  руб.</p>
+
+                    <a class="category__product-btn btn" href="product.html">Запросить КП</a>
+                </div>
+
+                <div class="category__product">
+                    <img class="category__product-img" src="./img/category/product-3.png" alt="product">
+
+                    <p class="category__product-name">Openmark</p>
+
+                    <p class="category__product-prename">инжекторы</p>
+
+                    <p class="category__product-have">
+                        <img src="./img/category/no-have.png" alt="ellipse">
+                        нет в наличии
+                    </p>
+
+                    <a class="category__product-tex" href="#">технические характеристики</a>
+
+                    <p class="category__product-price section-pretitle">100000 руб.</p>
+
+                    <a class="category__product-btn btn" href="product.html">Запросить КП</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Useful -->
+<section class="useful">
+    <div class="container">
+
+        <div class="useful__grid">
+
+            <p class="useful__top-title section-title">Полезная информация, при выборе чего-то</p>
+
+            <a class="useful__btn" href="#">перейти в блог</a>
+    
+            <div class="useful__wrapper">
+                <div class="useful__item usef-1">
+                    <span class="useful__date">25 июля 2022</span>
+    
+                    <img class="useful__img" src="./img/useful/useful-1.png" alt="useful-img">
+    
+                    <div class="useful__box">
+                        <p class="useful__title content-title">Как устроен рентгеновский аппарат?</p>
+    
+                        <p class="useful__text">Рентгеновские аппараты широко используются в современной медицинской практике. С их ...</p>
+    
+                        <a class="useful__link" href="#">читать полностью</a>
+                    </div>
+                </div>
+
+                <div class="useful__item usef-2">
+                    <span class="useful__date">10 сентября 2019</span>
+    
+                    <img class="useful__img" src="./img/useful/useful-2.png" alt="useful-img">
+    
+                    <div class="useful__box">
+                        <p class="useful__title content-title">Какой негатоскоп выбрать: 1-, 2-, или 3-х кадровый?</p>
+    
+                        <p class="useful__text">Негатоскоп – прибор, предназначенный для просмотра рентгеновских снимков, как ...
+                        </p>
+    
+                        <a class="useful__link" href="#">читать полностью</a>
+                    </div>
+                </div>
+
+                <div class="useful__item usef-3">
+                    <span class="useful__date">5 августа 2022</span>
+    
+                    <img class="useful__img" src="./img/useful/useful-3.png" alt="useful-img">
+    
+                    <div class="useful__box">
+                        <p class="useful__title content-title">Рентген-аппарат: технические характеристики</p>
+    
+                        <p class="useful__text">Рентгеновский аппарат – это технически сложное устройство, продуцирующее рентген- ...</p>
+    
+                        <a class="useful__link" href="#">читать полностью</a>
+                    </div>
+                </div>
+
+                <div class="useful__item usef-4">
+                    <span class="useful__date">25 июля 2022</span>
+    
+                    <img class="useful__img" src="./img/useful/useful-1.png" alt="useful-img">
+    
+                    <div class="useful__box">
+                        <p class="useful__title content-title">Некоторое название статьи по данной тематике</p>
+    
+                        <p class="useful__text">Идейные соображения высшего порядка, а также постоянный количественный рост и сфера ...</p>
+    
+                        <a class="useful__link" href="#">читать полностью</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Lizing -->
+<section class="lizing">
+    <div class="container">
+
+        <!-- Slider main container -->
+        <div class="lizing__swiper swiper">
+
+            <div class="lizing__slider swiper-wrapper">
+
+                <div class="lizing__slide swiper-slide">
+                    <div class="lizing__slide-box">
+                        <p class="lizing__slide-title">Лизинг и рассрочка</p>
+
+                        <p class="lizing__slide-pretitle">возможности для бизнеса</p>
+                    </div>
+
+                    <ul class="lizing__slide-menu">
+                        <li>авансовый платеж от 35%</li>
+                        <li>без НДС</li>
+                        <li>до 2 лет</li>
+                    </ul>
+
+                    <a class="lizing__slide-btn btn" href="#">Подробнее</a>
+                </div>
+
+                <div class="lizing__slide swiper-slide">
+                    <div class="lizing__slide-box">
+                        <p class="lizing__slide-title">Лизинг и рассрочка</p>
+
+                        <p class="lizing__slide-pretitle">возможности для бизнеса</p>
+                    </div>
+
+                    <ul class="lizing__slide-menu">
+                        <li>авансовый платеж от 35%</li>
+                        <li>без НДС</li>
+                        <li>до 2 лет</li>
+                    </ul>
+
+                    <a class="lizing__slide-btn btn" href="#">Подробнее</a>
+                </div>
+
+                <div class="lizing__slide swiper-slide">
+                    <div class="lizing__slide-box">
+                        <p class="lizing__slide-title">Лизинг и рассрочка</p>
+
+                        <p class="lizing__slide-pretitle">возможности для бизнеса</p>
+                    </div>
+
+                    <ul class="lizing__slide-menu">
+                        <li>авансовый платеж от 35%</li>
+                        <li>без НДС</li>
+                        <li>до 2 лет</li>
+                    </ul>
+
+                    <a class="lizing__slide-btn btn" href="#">Подробнее</a>
+                </div>
+
+            </div>
+
+            <div class="lizing__pagination swiper-pagination"></div>
+
+            <div class="lizing-btn-prev swiper-button-prev">
+                <svg width="24" height="24" fill="black"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+            </div>
+            <div class="lizing-btn-next swiper-button-next">
+                <svg width="24" height="24" fill="black"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Benefits -->
+<section class="benefits">
+    <div class="container">
+
+        <h2 class="benefits__title section-title">Преимущества работы с нами</h2>
+
+        <div class="benefits__wrapper">
+          
+            <div class="benefits__swiper swiper">
+                <div class="benefits__slider swiper-wrapper">
+
+                    <div class="benefits__slide swiper-slide ben-1">
+                        <div class="benefits__item">
+                            <img class="benefits__icon" src="./img/benefits/1.png" alt="benefits-img">
+            
+                            <p class="benefits__name">Гарантия до 2-х лет </p>
+            
+                            <p class="benefits__text">В зависимости от оборудования мы предоставляем от 1 до 2 лет гарантии.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits__slide swiper-slide ben-2">
+                        <div class="benefits__item">
+                            <img class="benefits__icon" src="./img/benefits/2.png" alt="benefits-img">
+            
+                            <p class="benefits__name">Бесплатное обслуживание</p>
+            
+                            <p class="benefits__text">Бесплатное сервисное обслуживание 24/7 в период гарантийного срока.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits__slide swiper-slide ben-3">
+                        <div class="benefits__item">
+                            <img class="benefits__icon" src="./img/benefits/3.png" alt="benefits-img">
+            
+                            <p class="benefits__name">Бесплатная доставка и обучение</p>
+            
+                            <p class="benefits__text">Бесплатная доставка, установка и обучение вашего персонала.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits__slide swiper-slide ben-4">
+                        <div class="benefits__item">
+                            <img class="benefits__icon" src="./img/benefits/4.png" alt="benefits-img">
+            
+                            <p class="benefits__name">Консультация и бизнес-план в подарок</p>
+            
+                            <p class="benefits__text">Консультация с предоставлением бизнес-плана по продвижению аппарата.</p>
+                        </div>
+                    </div>
+
+                    <div class="benefits__slide swiper-slide ben-5">
+                        <div class="benefits__item">
+                            <img class="benefits__icon" src="./img/benefits/2.png" alt="benefits-img">
+            
+                            <p class="benefits__name">Консультация и бизнес-план в подарок</p>
+            
+                            <p class="benefits__text">Консультация с предоставлением бизнес-плана по продвижению аппарата.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="benefits__btns">
+                    <div class="benefits-btn-prev swiper-button-prev">
+                        <svg width="24" height="24" fill="black"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+                    </div>
+                    <div class="benefits-btn-next swiper-button-next">
+                        <svg width="24" height="24" fill="black"><path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/></svg>
+                    </div>
+                </div>
+            </div>
+           
+     
+        </div>
+
+        <p class="benefits__big-text">
+            Таким образом сложившаяся структура организации играет важную роль в формировании систем массового участия. Не следует, однако забывать, что консультация с широким активом представляет собой интересный эксперимент проверки систем массового участия. Повседневная практика показывает, что дальнейшее развитие различных форм деятельности требуют определения и уточнения систем массового участия. <span class="bold">Задача организации, в особенности же дальнейшее развитие различных форм деятельности требуют определения и уточнения позиций,</span> занимаемых участниками в отношении поставленных задач. Таким образом укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании новых предложений. Задача организации, в особенности же реализация намеченных плановых заданий требуют от нас анализа модели развития.
+        </p>
+
+    </div>
+</section>
+
+
+
+
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+
+            <div class="footer__box foot-1">
+                <img class="footer__logo" src="./img/footer/logo.png" alt="logo">
+
+                <p class="footer__pretext">Новая модель организационной деятельности играет важную роль в формировании форм развития. Не следует, однако забывать,.</p>
+
+                <p class="footer__text">Copyright © 2022</p>
+
+                <a class="footer__pretext" href="#">Политика конфиденциальности</a>
+            </div>
+
+            <div class="footer__box foot-2">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item"><a href="#">Акушерство и гинекология</a></li>
+                    <li class="footer__menu-item"><a href="#">Гибкая эндоскопия </a></li>
+                    <li class="footer__menu-item"><a href="#">Мобильные кабинеты</a></li>
+                    <li class="footer__menu-item"><a href="#">Оториноларингология</a></li>
+                    <li class="footer__menu-item"><a href="#">Реанимация</a></li>
+                    <li class="footer__menu-item"><a href="#">Рентгенология и томография</a></li>
+                    <li class="footer__menu-item"><a href="#">Скорая помощь</a></li>
+                    <li class="footer__menu-item"><a href="#">Стерилизация</a></li>
+                    <li class="footer__menu-item"><a href="#">Урология</a></li>
+                    <li class="footer__menu-item"><a href="#">Физиотерапия и реабилитация</a></li>
+                    <li class="footer__menu-item"><a href="#">Функциональная диагностика</a></li>
+                    <li class="footer__menu-item"><a href="#">Хирургия</a></li>
+                    <li class="footer__menu-item"><a href="#">Ветеринария</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box foot-3">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item"><a href="#">Каталог</a></li>
+                    <li class="footer__menu-item"><a href="#">Рассрочка</a></li>
+                    <li class="footer__menu-item"><a href="#">О компании </a></li>
+                    <li class="footer__menu-item"><a href="#">Сервисный отдел </a></li>
+                    <li class="footer__menu-item"><a href="#">Партнеры</a></li>
+                    <li class="footer__menu-item"><a href="#">Контакты</a></li>
+                    <li class="footer__menu-item"><a href="#">Блог</a></li>
+                    <li class="footer__menu-item"><a href="#">Новости</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box foot-4">
+                <p class="footer__phone">+988 71 208 27 72</p>
+
+                <div class="footer__inner">
+                    <div class="footer__inner-right">
+                        <p class="footer__inner-title">режим работы</p>
+
+                        <p class="footer__inner-text">пн-пт: 09:00 - 18:00</p>
+                    </div>
+
+                    <img class="footer__inner-icon" src="./img/footer/clock.png" alt="clock-icon">
+                </div>
+
+                <div class="footer__inner">
+                    <div class="footer__inner-right">
+                        <p class="footer__inner-title">e-mail</p>
+
+                        <a class="footer__inner-text email-link" href="mailto:info@byork.uz">info@byork.uz</ф>
+                    </div>
+
+                    <img class="footer__inner-icon" src="./img/footer/mail.png" alt="mail-icon">
+                </div>
+
+                <div class="footer__inner">
+                    <div class="footer__inner-right">
+                        <p class="footer__inner-title">адрес</p>
+
+                        <a class="footer__inner-text" href="#">Узбекистан, 100207, г. Ташкент, Яшнабадскийрайон, 2 проезд, ул. Чулпон, 14А</a>
+                    </div>
+                </div>
+
+                <div class="footer__icons">
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/telegram.png" alt="icon"></a>
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/facebook.png" alt="icon"></a>
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/instagram.png" alt="icon"></a>
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/youtube.png" alt="icon"></a>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</body>
+
+<!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="./js/scripts.min.js"></script>
+
+</html>

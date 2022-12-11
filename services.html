@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Landing Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Новости</title>
+    
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> -->
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+        <link rel="icon" href="./img/favicon.svg">
+        <link rel="stylesheet" href="./css/style.min.css">
+    </head>
+    
+    <body class="main__body">
+        
+        <!-- Header -->
+        <header>
+    <!-- Navbar -->
+    <div class="navbar-top">
+        <div class="container">
+            
+            <div class="navbar-top__wrapper">
+                
+                <div class="navbar-top__box box__1">
+                    <div class="logo-top">
+                        <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                
+                <div class="navbar-top__box box__2">
+                    <p class="navbar-top__text">Медицинское оборудование <br> от лучших производителей</p>
+                    
+                    <p class="navbar-top__text navbar-top__text-since">
+                        <img src="./img/star-icon.png" alt="star">
+                        С 2015 года на рынке
+                    </p>
+                    
+                    <select class="language-select" name="language" id="language">
+                        <option value="rus">Rus</option>
+                        <option value="rus">Eng</option>
+                        <option value="rus">Uzb</option>
+                    </select>
+                    
+                    <a class="catalog-icon" href="#">
+                        <img src="./img/icon-1.png" alt="icon">
+                    </a>
+                </div>
+                
+                <div class="navbar-top__box box__3">
+                    <p class="navbar-top__text">режим работы</p>
+                    <p class="navbar-top__text">
+                        пн-пт: <span class="navbar-top__text-bold">09:00 - 18:00</span>
+                    </p>
+                </div>
+                
+                <div class="navbar-top__box box__4">
+                    <img src="./img/main-icon.png" alt="mail-icon">
+                    <a class="navbar-top__mail navbar-top__text-bold" href="email:info@byork.uz">info@byork.uz</a>
+                </div>
+                
+                <div class="navbar-top__box box__5">
+                    <p class="navbar-top__text navbar-top__text-bold">+988 71 208 27 72</p>
+                    <a href="tel:+988712082772">перезвоните мне</a>
+                </div>
+                
+            </div>
+            
+            <div class="navbar-top__inner">
+                <select class="language-select" name="language" id="language">
+                    <option value="rus">Rus</option>
+                    <option value="rus">Eng</option>
+                    <option value="rus">Uzb</option>
+                </select>
+                
+                <a class="navbar-top__mail navbar-top__text-bold" href="mailto:info@byork.uz">info@byork.uz</a>
+                
+                <p class="navbar-top__text text-time">
+                    пн-пт: 
+                    <span class="navbar-top__text-bold"> 09:00 - 18:00</span>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+    
+    <nav>
+        <div class="container header-container">
+            
+            <div class="navbar">
+                <div class="burger">
+                    <span></span>
+                </div>
+                
+                <div class="logo-mini">
+                    <a href="index.html"><img src="./img/logo.png" alt="logo"></a>
+                </div>
+                
+                <ul class="menu" id="menu">
+                    <li class="menu__item">
+                        <a  class="menu__item-link dropdown-btn" id="dropdownBtn" data-scroll>
+                            <button class="dropdown-btn-toggle dropdown-btn-open">
+                                <img src="./img/header/4dots-icon.png" alt="icon" />
+                                Каталог товаров</button>
+                                <button class="dropdown-btn-toggle dropdown-btn-close"><img src='./img/close.png'> Закрыть</button>
+                            </a>
+                        </li>
+                        <li class="menu__item"><a href="index.html" class="menu__item-link" data-scroll>Главная</a></li>
+                        <li class="menu__item"><a href="mission.html" class="menu__item-link" data-scroll>О компании</a></li>
+                        <li class="menu__item"><a href="services.html" class="menu__item-link" data-scroll>Сервисный отдел</a></li>
+                        <li class="menu__item"><a href="partners.html" class="menu__item-link" data-scroll>Партнеры</a></li>
+                        <li class="menu__item"><a href="contacts.html" class="menu__item-link" data-scroll>Контакты</a></li>
+                        <li class="menu__item"><a href="blog-list.html" class="menu__item-link" data-scroll>Блог</a></li>
+                        <li class="menu__item"><a href="news.html" class="menu__item-link" data-scroll>Новости</a></li>
+                        <li class="menu__item menu__dropdown-credit"><a href="#" class="menu__item-link " data-scroll>Рассрочка <img src="./img/arrow-white.png" alt="icon"></a>
+                        </li>
+                    </ul>
+                    
+                    <a class="catalog-icon-mini" href="#">
+                        <img src="./img/icon-1.png" alt="icon">
+                    </a>
+                    
+                </div>
+                
+                <img class="line-null" src="./img/line0.png" alt="line">
+                <div class="body-effect">
+                    <div class="popup__search">
+                        <div class="popup-wrap">
+                            <div class="popup__search-wrapper">
+                                <input type="search" placeholder="Write your question...">
+                                <button class="catalog-icon-search">
+                                    <img src="./img/search.png" alt="icon">
+                                </button>
+                            </div>
+                            <div class="popular__searchs">
+                                <div>
+                                    <h4>Lorem, ipsum.</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                </div>
+                                <div class="popular-search__imgs">
+                                    <img src="../img/product/prod-4.png" alt="product" width="40" height="40">
+                                </div>
+                            </div> 
+                            <div class="popular__searchs">
+                                <div>
+                                    <h4>Lorem, ipsum.</h4>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                                </div>
+                                <div class="popular-search__imgs">
+                                    <img src="../img/product/prod-4.png" alt="product" width="40" height="40">
+                                </div>
+                            </div>
+                            
+                            <ul class="popup__search-list">
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                                <li class="popup__search-list-item">popular</li>
+                            </ul>
+                            <button class="close-btns">
+                                <img src="./img/close.png" alt="icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <button class="catalog-icon-search search-btns">
+                    <img src="./img/search.png" alt="icon">
+                </button>
+            </div>
+        </nav>
+        
+        <div class="dropdown-menu" id="dropdownMenu">
+            
+            <div class="container">
+                <div class="catalog-list__wrapper">
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Акушерство и гинекология</p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 9 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-1.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Гибкая эндоскопия</p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 2 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-2.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Мобильные кабинеты </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 3 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-3.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Оторино- ларингология </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 8 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-4.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Реанимация </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 2 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-5.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Рентгенология и томография</p>
+                            
+                            <a class="catalog-list__item-link" href="02_01.html">всего 3 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-6.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Скорая помощь </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 1 товар</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-7.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Стерилизация </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 6 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-8.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Урология </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 5 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-9.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Физиотерапия и реабилитация </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 4 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-10.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Функциональная диагностика </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 2 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-11.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Хирургия </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 7 товаров</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-12.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__item">
+                        <div class="catalog-list__item-box">
+                            <p class="catalog-list__item-title">Ветеринария </p>
+                            
+                            <a class="catalog-list__item-link" href="#">всего 3 товара</a>
+                        </div>
+                        
+                        <img class="catalog-list__item-img" src="./img/catalog-list/catalog-13.png" alt="catalog-list-img">
+                    </div>
+                    
+                    <div class="catalog-list__offer catalog-list__item">
+                        
+                        <img class="catalog-list__offer-img" src="./img/catalog-list/hand-1.png" alt="hand-img">
+                        
+                        <div class="catalog-list__offer-box">
+                            <p class="catalog-list__offer-title"><span>Скачайте полный каталог - 148 товаров </span> .pdf 54.21MB</p>
+                        </div>
+                        
+                        <a class="catalog-list__offer-btn btn" href="#">Скачать</a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="bg-gray" id="bgGray">
+            
+        </div>
+        
+    </header>
+    
+    
+    
+    
+    <script>
+        const btnss = document.querySelector(".search-btns")
+        const closeBtn = document.querySelector(".close-btns")
+        const body = document.querySelector(".body-effect")
+        const searchInput = document.querySelector(".popup__search")
+        btnss.addEventListener("click", () => {
+            body.classList.add("active-body-effect")
+            searchInput.classList.add("popup__search-active")
+            document.querySelector(".navbar").style.display = 'none'
+            document.querySelector(".search-btns").style.display = 'none'
+        })
+        closeBtn.addEventListener("click", () => {
+            document.querySelector(".navbar").style.display = 'flex'
+            document.querySelector(".search-btns").style.display = 'flex'
+            body.classList.remove("active-body-effect")
+            searchInput.classList.remove("popup__search-active")
+        })
+    </script>
+    
+    
+        
+        <!-- Main Page -->
+        <main>
+            
+            <section class="service">
+    <div class="container">
+        <ul class="beard__menu">
+            <li class="beard__item"><a href="index.html">главная</a></li>
+
+            <p class="beard__arrow">...</p>
+
+            <li class="beard__item beard__item-active"><a href="product.html">выставки</a></li>
+        </ul>
+
+        <div class="service__title">
+            <h3>Сервисный отдел</h3>
+            <div class="service__banner">
+                <div class="service__banner-title">
+                    <p>Эксплуатация начинается с лучшего обслуживания</p>
+                </div>
+                <div class="service__banner-card">
+                    <div class="service__banner-card__wrapper">
+                        <h3>5 лет</h3>
+                        <p>Средний стаж работников в техническом обслуживании</p>
+                    </div>
+                    <div class="service__banner-card__wrapper">
+                        <h3>5 лет</h3>
+                        <p>Средний стаж работников в техническом обслуживании</p>
+                    </div>
+                </div>
+            </div>
+            <div class="service__banner-card service__banner_hidden">
+                <div class="service__banner-card__wrapper service__banner_hidden_wrap">
+                    <h3 class="h3">5 лет</h3>
+                    <p>Средний стаж работников в техническом обслуживании</p>
+                </div>
+                <div class="service__banner-card__wrapper service__banner_hidden_wrap">
+                    <h3 class="h3">5 лет</h3>
+                    <p>Средний стаж работников в техническом обслуживании</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="service__rule services__swiper swiper">
+            <h3>Сервисная служба осуществляет:</h3>
+            <div class="service__rule-wrapper swiper-wrapper">
+                <div class="service__rule-card swiper-slide">
+                    <img src="../img/servicerule.png" alt="" width="60" height="60">
+                    <p>Поставка запасных частей, принадлежностей, расходных материалов для медицинской техники и медицинского оборудования</p>
+
+                    <p class="service__rule-card__number">01</p>
+                </div>
+                <div class="service__rule-card swiper-slide">
+                    <img src="../img/servicerule.png" alt="" width="60" height="60">
+                    <p>Поставка запасных частей, принадлежностей, расходных материалов для медицинской техники и медицинского оборудования</p>
+
+                    <p class="service__rule-card__number">02</p>
+                </div>
+                <div class="service__rule-card swiper-slide">
+                    <img src="../img/servicerule.png" alt="" width="60" height="60">
+                    <p>Поставка запасных частей, принадлежностей, расходных материалов для медицинской техники и медицинского оборудования</p>
+
+                    <p class="service__rule-card__number">03</p>
+                </div>
+                <div class="service__rule-card swiper-slide">
+                    <img src="../img/servicerule.png" alt="" width="60" height="60">
+                    <p>Поставка запасных частей, принадлежностей, расходных материалов для медицинской техники и медицинского оборудования</p>
+
+                    <p class="service__rule-card__number">04</p>
+                </div>
+                <div class="service__rule-card swiper-slide">
+                    <img src="../img/servicerule.png" alt="" width="60" height="60">
+                    <p>Поставка запасных частей, принадлежностей, расходных материалов для медицинской техники и медицинского оборудования</p>
+
+                    <p class="service__rule-card__number">04</p>
+                </div>
+                <div class="service__rule-card swiper-slide">
+                    <img src="../img/servicerule.png" alt="" width="60" height="60">
+                    <p>Поставка запасных частей, принадлежностей, расходных материалов для медицинской техники и медицинского оборудования</p>
+
+                    <p class="service__rule-card__number">04</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="features">
+            <div class="container">
+                <div class="inner-box">
+                    <div class="slider features__slider">
+                        <div class="circle circle_1">
+                            <svg viewBox="0 0 700 700">
+                                <circle cx="350" cy="350" r="340" fill="none" stroke="#E0EAF1" stroke-width="5"></circle>
+                                <circle id="slider-path" cx="350" cy="350" r="340" fill="none" stroke="#059272" stroke-width="12"></circle>
+                            </svg>
+                        </div>
+                        <div class="circle circle_2">
+                            <svg viewBox="0 0 720 720">
+                                <circle cx="360" cy="360" r="359" fill="none" stroke="#E0EAF1" stroke-width="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="circle circle_3">
+                            <svg viewBox="0 0 900 900" opacity=".4">
+                                <circle cx="450" cy="450" r="449.5" fill="none" stroke="#E0EAF1" stroke-width="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="slider__numbers">
+                            <span class="slider-numb-1">0</span>
+                            <span class="slider-numb-2">1</span>
+                        </div>
+
+                        <div class="swiper-container">
+
+                            <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                <div class="swiper-slide features__slide">
+                                    <div class="features__item">
+                                        <div class="features__icon">
+                                            <img src="../img/icon.png" alt="icon">
+                                        </div>
+                                        <div class="features__title">Качество</div>
+                                        <div class="features__text">Все операции проводятся в строгом соответствии с установленными производителем техническими регламентами и периодичностью, с использованием фирменного инструментария и оригинальных запчастей.</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide features__slide">
+                                    <div class="features__item">
+                                        <div class="features__icon">
+                                            <img src="../img/icon.png" alt="icon">
+                                        </div>
+                                        <div class="features__title">Качество</div>
+                                        <div class="features__text">Все операции проводятся в строгом соответствии с установленными производителем техническими регламентами и периодичностью, с использованием фирменного инструментария и оригинальных запчастей.</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide features__slide">
+                                    <div class="features__item">
+                                        <div class="features__icon">
+                                            <img src="../img/icon.png" alt="icon">
+                                        </div>
+                                        <div class="features__title">Качество</div>
+                                        <div class="features__text">Все операции проводятся в строгом соответствии с установленными производителем техническими регламентами и периодичностью, с использованием фирменного инструментария и оригинальных запчастей.</div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide features__slide">
+                                    <div class="features__item">
+                                        <div class="features__icon">
+                                            <img src="../img/icon.png" alt="icon">
+                                        </div>
+                                        <div class="features__title">Качество</div>
+                                        <div class="features__text">Все операции проводятся в строгом соответствии с установленными производителем техническими регламентами и периодичностью, с использованием фирменного инструментария и оригинальных запчастей.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination swiper-pagination-bullets">
+                                <span class="pagination active"></span>
+                                <span class="pagination"></span>
+                                <span class="pagination"></span>
+                                <span class="pagination"></span>
+                            </div>
+
+                            <!-- <div class="swiper-scrollbar"></div> -->
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+            <section class="company-detail">
+   <div class="container">
+      <div class="detail-cards">
+         <div class="detail-cards__card-blue">
+            <h4>Детали компании</h4>
+         </div>
+         <div class="detail-cards__card">
+            <div class="number">
+
+               <h4>400 </h4><span>+</span>
+            </div>
+            <p>Количество покупателей</p>
+         </div>
+         <div class="detail-cards__card">
+            <div class="number">
+
+               <h4>400 </h4><span>+</span>
+            </div>
+            <p>Количество покупателей</p>
+         </div>
+         <div class="detail-cards__card">
+            <div class="number">
+
+               <h4>400 </h4><span>+</span>
+            </div>
+            <p>Количество покупателей</p>
+         </div>
+      </div>
+      <div class="detail-cards__two">
+         <div class="detail-cards__card">
+            <div class="number">
+
+               <h4>400 </h4><span>+</span>
+            </div>
+            <p>Количество покупателей</p>
+         </div>
+         <div class="detail-cards__card">
+            <div class="number">
+
+               <h4>400 </h4><span>+</span>
+            </div>
+            <p>Количество покупателей</p>
+         </div>
+         <div class="detail-img__card banner">
+            <img class="banner_image" src="../img/banner.png" alt="">
+            <div class="item-card">
+               <p class="title">OOO “BYORK” (бывшая OOO “Orient Med”) основанная в 2015 году на сегодняшний день
+                  является одной  оборудования в
+                  Узбекистане. . </p>
+
+               <div class="about_companie">
+                  <p>Подробнее о компании</p>
+                  <img src="../img/preww.svg" alt="">
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<script>
+   window.addEventListener('load', () => {
+      let count = document.querySelectorAll('.detail-cards__card h4')
+
+      for (let i = 0; i < count.length; i++) {
+         count[i].innerHTML = 0;
+         const interval = setInterval(() => {
+            count[i].innerHTML = +count[i].innerHTML + 10
+         }, 50);
+
+         setTimeout(() => {
+            clearInterval(interval)
+         }, 2000);
+      }
+
+   })
+</script>
+            
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer__wrapper">
+
+            <div class="footer__box foot-1">
+                <img class="footer__logo" src="./img/footer/logo.png" alt="logo">
+
+                <p class="footer__pretext">Новая модель организационной деятельности играет важную роль в формировании форм развития. Не следует, однако забывать,.</p>
+
+                <p class="footer__text">Copyright © 2022</p>
+
+                <a class="footer__pretext" href="#">Политика конфиденциальности</a>
+            </div>
+
+            <div class="footer__box foot-2">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item"><a href="#">Акушерство и гинекология</a></li>
+                    <li class="footer__menu-item"><a href="#">Гибкая эндоскопия </a></li>
+                    <li class="footer__menu-item"><a href="#">Мобильные кабинеты</a></li>
+                    <li class="footer__menu-item"><a href="#">Оториноларингология</a></li>
+                    <li class="footer__menu-item"><a href="#">Реанимация</a></li>
+                    <li class="footer__menu-item"><a href="#">Рентгенология и томография</a></li>
+                    <li class="footer__menu-item"><a href="#">Скорая помощь</a></li>
+                    <li class="footer__menu-item"><a href="#">Стерилизация</a></li>
+                    <li class="footer__menu-item"><a href="#">Урология</a></li>
+                    <li class="footer__menu-item"><a href="#">Физиотерапия и реабилитация</a></li>
+                    <li class="footer__menu-item"><a href="#">Функциональная диагностика</a></li>
+                    <li class="footer__menu-item"><a href="#">Хирургия</a></li>
+                    <li class="footer__menu-item"><a href="#">Ветеринария</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box foot-3">
+                <ul class="footer__menu">
+                    <li class="footer__menu-item"><a href="#">Каталог</a></li>
+                    <li class="footer__menu-item"><a href="#">Рассрочка</a></li>
+                    <li class="footer__menu-item"><a href="#">О компании </a></li>
+                    <li class="footer__menu-item"><a href="#">Сервисный отдел </a></li>
+                    <li class="footer__menu-item"><a href="#">Партнеры</a></li>
+                    <li class="footer__menu-item"><a href="#">Контакты</a></li>
+                    <li class="footer__menu-item"><a href="#">Блог</a></li>
+                    <li class="footer__menu-item"><a href="#">Новости</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__box foot-4">
+                <p class="footer__phone">+988 71 208 27 72</p>
+
+                <div class="footer__inner">
+                    <div class="footer__inner-right">
+                        <p class="footer__inner-title">режим работы</p>
+
+                        <p class="footer__inner-text">пн-пт: 09:00 - 18:00</p>
+                    </div>
+
+                    <img class="footer__inner-icon" src="./img/footer/clock.png" alt="clock-icon">
+                </div>
+
+                <div class="footer__inner">
+                    <div class="footer__inner-right">
+                        <p class="footer__inner-title">e-mail</p>
+
+                        <a class="footer__inner-text email-link" href="mailto:info@byork.uz">info@byork.uz</ф>
+                    </div>
+
+                    <img class="footer__inner-icon" src="./img/footer/mail.png" alt="mail-icon">
+                </div>
+
+                <div class="footer__inner">
+                    <div class="footer__inner-right">
+                        <p class="footer__inner-title">адрес</p>
+
+                        <a class="footer__inner-text" href="#">Узбекистан, 100207, г. Ташкент, Яшнабадскийрайон, 2 проезд, ул. Чулпон, 14А</a>
+                    </div>
+                </div>
+
+                <div class="footer__icons">
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/telegram.png" alt="icon"></a>
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/facebook.png" alt="icon"></a>
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/instagram.png" alt="icon"></a>
+                    <a class="footer__icons-link" href="#"><img src="./img/footer/youtube.png" alt="icon"></a>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</footer>
+        
+    </body>
+    
+    <!-- <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/scripts.min.js"></script>
+    
+    </html>
