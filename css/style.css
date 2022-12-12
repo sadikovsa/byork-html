@@ -2724,11 +2724,11 @@ nav {
   box-shadow: 0 0 50px 0px rgba(53, 161, 250, 0.5);
 }
 
-.features {
+.mission__features {
   padding: 100px 0;
 }
 
-.features__title {
+.mission__features__title {
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -2737,7 +2737,7 @@ nav {
   margin-bottom: 30px;
 }
 
-.features__wrapper {
+.mission__features__wrapper {
   -webkit-column-count: 3;
      -moz-column-count: 3;
           column-count: 3;
@@ -2746,7 +2746,7 @@ nav {
           column-gap: 20px;
 }
 
-.features__item {
+.mission__features__item {
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
@@ -2759,20 +2759,20 @@ nav {
   height: 250px;
 }
 
-.features__item:nth-child(2),
-.features__item:nth-child(3),
-.features__item:nth-child(6) {
+.mission__features__item:nth-child(2),
+.mission__features__item:nth-child(3),
+.mission__features__item:nth-child(6) {
   height: 340px;
   padding: 60px 30px 50px;
 }
 
-.features__item:nth-child(2) .features__icon,
-.features__item:nth-child(3) .features__icon,
-.features__item:nth-child(6) .features__icon {
+.mission__features__item:nth-child(2) .mission__features__icon,
+.mission__features__item:nth-child(3) .mission__features__icon,
+.mission__features__item:nth-child(6) .mission__features__icon {
   margin-bottom: 70px;
 }
 
-.features__icon {
+.mission__features__icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2788,14 +2788,14 @@ nav {
   margin: 0 auto 30px auto;
 }
 
-.features__icon img {
+.mission__features__icon img {
   height: 100%;
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
 
-.features__name {
+.mission__features__name {
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -2805,7 +2805,7 @@ nav {
   margin-bottom: 12px;
 }
 
-.features__text {
+.mission__features__text {
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
@@ -2851,7 +2851,7 @@ nav {
   margin-bottom: 20px;
 }
 
-.mission-hero .about-company__features {
+.mission-hero .about-company__mission__features {
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2864,15 +2864,15 @@ nav {
           align-items: center;
 }
 
-.mission-hero .about-company__features .about-paras {
+.mission-hero .about-company__mission__features .about-paras {
   padding: 20px;
 }
 
-.mission-hero .about-company__features .about-paras p {
+.mission-hero .about-company__mission__features .about-paras p {
   margin-bottom: 12px;
 }
 
-.mission-hero .about-company__features p {
+.mission-hero .about-company__mission__features p {
   font-weight: 300;
   font-size: 14px;
   line-height: 18px;
@@ -9382,54 +9382,54 @@ label {
     display: none;
   }
 
-  .features {
+  .mission__features {
     padding: 70px 0 25px;
   }
 
-  .features__wrapper {
+  .mission__features__wrapper {
     -webkit-column-count: 1;
        -moz-column-count: 1;
             column-count: 1;
   }
 
-  .features__title {
+  .mission__features__title {
     font-size: 20px;
     line-height: 25px;
     margin-bottom: 30px;
     text-align: center;
   }
 
-  .features__item {
+  .mission__features__item {
     height: 260px;
     padding: 40px 30px 30px;
   }
 
-  .features__item:nth-child(2),
-  .features__item:nth-child(3),
-  .features__item:nth-child(6) {
+  .mission__features__item:nth-child(2),
+  .mission__features__item:nth-child(3),
+  .mission__features__item:nth-child(6) {
     height: 260px;
     padding: 40px 30px 30px;
   }
 
-  .features__item:nth-child(2) .features__icon,
-  .features__item:nth-child(3) .features__icon,
-  .features__item:nth-child(6) .features__icon {
+  .mission__features__item:nth-child(2) .mission__features__icon,
+  .mission__features__item:nth-child(3) .mission__features__icon,
+  .mission__features__item:nth-child(6) .mission__features__icon {
     margin-bottom: 20px;
   }
 
-  .features__icon {
+  .mission__features__icon {
     height: 50px;
     width: 50px;
     margin-bottom: 20px;
   }
 
-  .features__name {
+  .mission__features__name {
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 5px;
   }
 
-  .features__text {
+  .mission__features__text {
     font-size: 12px;
     line-height: 26px;
   }
@@ -9863,14 +9863,14 @@ label {
 }
 
 @media (max-width: 650px) {
-  .mission-hero .about-company__features {
+  .mission-hero .about-company__mission__features {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
 
-  .mission-hero .about-company__features img {
+  .mission-hero .about-company__mission__features img {
     display: none;
     -o-object-fit: contain;
        object-fit: contain;
@@ -10922,19 +10922,19 @@ label {
     font-size: 22px;
   }
 
-  .features {
+  .mission__features {
     padding: 80px 0;
   }
 
-  .features__item:nth-child(2),
-  .features__item:nth-child(3),
-  .features__item:nth-child(6) {
+  .mission__features__item:nth-child(2),
+  .mission__features__item:nth-child(3),
+  .mission__features__item:nth-child(6) {
     padding: 40px 30px 30px;
   }
 
-  .features__item:nth-child(2) .features__icon,
-  .features__item:nth-child(3) .features__icon,
-  .features__item:nth-child(6) .features__icon {
+  .mission__features__item:nth-child(2) .mission__features__icon,
+  .mission__features__item:nth-child(3) .mission__features__icon,
+  .mission__features__item:nth-child(6) .mission__features__icon {
     margin-bottom: 60px;
   }
 
@@ -11186,33 +11186,33 @@ label {
     font-size: 18px;
   }
 
-  .features {
+  .mission__features {
     padding: 80px 0;
   }
 
-  .features__item:nth-child(2),
-  .features__item:nth-child(3),
-  .features__item:nth-child(6) {
+  .mission__features__item:nth-child(2),
+  .mission__features__item:nth-child(3),
+  .mission__features__item:nth-child(6) {
     padding: 40px 30px 30px;
   }
 
-  .features__item:nth-child(2) .features__icon,
-  .features__item:nth-child(3) .features__icon,
-  .features__item:nth-child(6) .features__icon {
+  .mission__features__item:nth-child(2) .mission__features__icon,
+  .mission__features__item:nth-child(3) .mission__features__icon,
+  .mission__features__item:nth-child(6) .mission__features__icon {
     margin-bottom: 50px;
   }
 
-  .features__icon {
+  .mission__features__icon {
     height: 50px;
     width: 50px;
   }
 
-  .features__name {
+  .mission__features__name {
     font-size: 16px;
     line-height: 1.6;
   }
 
-  .features__text {
+  .mission__features__text {
     font-size: 14px;
     line-height: 1.4;
   }
@@ -11497,46 +11497,46 @@ label {
     max-width: 500px;
   }
 
-  .features {
+  .mission__features {
     padding: 80px 0;
   }
 
-  .features__wrapper {
+  .mission__features__wrapper {
     -webkit-column-count: 2;
        -moz-column-count: 2;
             column-count: 2;
   }
 
-  .features__item {
+  .mission__features__item {
     height: 300px;
     padding: 40px 30px 30px;
   }
 
-  .features__item:nth-child(2),
-  .features__item:nth-child(3),
-  .features__item:nth-child(6) {
+  .mission__features__item:nth-child(2),
+  .mission__features__item:nth-child(3),
+  .mission__features__item:nth-child(6) {
     height: 300px;
     padding: 40px 30px 30px;
   }
 
-  .features__item:nth-child(2) .features__icon,
-  .features__item:nth-child(3) .features__icon,
-  .features__item:nth-child(6) .features__icon {
+  .mission__features__item:nth-child(2) .mission__features__icon,
+  .mission__features__item:nth-child(3) .mission__features__icon,
+  .mission__features__item:nth-child(6) .mission__features__icon {
     margin-bottom: 40px;
   }
 
-  .features__icon {
+  .mission__features__icon {
     height: 60px;
     width: 60px;
     margin-bottom: 40px;
   }
 
-  .features__name {
+  .mission__features__name {
     font-size: 16px;
     line-height: 1.6;
   }
 
-  .features__text {
+  .mission__features__text {
     font-size: 14px;
     line-height: 1.4;
   }
