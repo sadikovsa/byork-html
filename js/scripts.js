@@ -778,7 +778,7 @@ const commandSwiper = new Swiper('.command__swiper', {
 });
 
 const servicesSwiper = new Swiper('.services__swiper', {
-    slidesPerView: "auto",
+    slidesPerView: 4,
     // spaceBetween: 30,
 
     // Navigation arrows
@@ -814,7 +814,16 @@ const servicesSwiper = new Swiper('.services__swiper', {
     }
 });
 
+const aimSwiper = new Swiper('.aim__swiper', {
+    slidesPerView: 1,
+    // spaceBetween: 30,
 
+    // Navigation arrows
+    navigation: {
+        nextEl: '.aim__swiper .swiper-button-next',
+        prevEl: '.aim__swiper .swiper-button-prev',
+    },
+});
 
 const historySwiperThumbs = new Swiper('.historys__swiper__thumbs', {
     slidesPerView: 10,
@@ -1003,53 +1012,16 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
         anim();
         mapInfo();
-        changeSlide();
     }, 400);
 });
 
-function changeSlide() {
-
-    const rangeSlide = document.querySelector('.rangeSlider__range');
-
-    const aimSwiper = new Swiper('.aim__swiper', {
-        centeredSlides: true,
-        slidesPerView: 2.5,
-        navigation: {
-            nextEl: '.aim__swiper .swiper-button-next',
-            prevEl: '.aim__swiper .swiper-button-prev',
-        },
-        breakpoints: {
-            320: {
-                centeredSlides: true,
-                slidesPerView: 1,
-            },
-            768: {
-                centeredSlides: true,
-                slidesPerView: 1,
-            },
-            1024: {
-                centeredSlides: true,
-                slidesPerView: 2.5,
-            },
-            1200: {
-                centeredSlides: true,
-                slidesPerView: 2.5,
-            },
-        },
-    });
-    if (rangeSlide) {
-        rangeSlide.addEventListener('change', function (e) {
-            e.preventDefault();
-            aimSwiper.slideTo(e.target.value);
-        })
-    }
-
-}
 
 function mapInfo() {
     let map = document.querySelector('.uzb_map');
 
     if (map) {
+
+
 
         let cities = map.querySelectorAll('path');
         let mapInfoUzi = document.querySelectorAll('.active__number.uzi');
