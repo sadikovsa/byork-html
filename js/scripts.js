@@ -664,48 +664,47 @@ const swiperBenefits = new Swiper('.benefits__swiper', {
 
 
 
-const swiperMission = new Swiper('.mission__swiper', {
-    slidesPerView: 4,
-    // spaceBetween: 30,
-
-    // Navigation arrows
+const swiperMission = new Swiper('.mission__plan__slider', {
+    slidesPerView: 3.3,
+    slidesPerGroup: 3,
+    spaceBetween: 5,
     navigation: {
-        nextEl: '.mission__swiper .swiper-button-next',
-        prevEl: '.mission__swiper .swiper-button-prev',
+        nextEl: '.mission__plan .swiper-button-next',
+        prevEl: '.mission__plan .swiper-button-prev',
     },
 
-
-    // Responsive breakpoints
     breakpoints: {
-        // when window width is >= 320px
         320: {
             slidesPerView: 1,
-            //   spaceBetween: 20
-        },
-        // when window width is >= 480px
-        480: {
-            slidesPerView: 2,
-            //   spaceBetween: 30
+            slidesPerGroup: 1,
+            spaceBetween: 5
         },
 
-        700: {
-            slidesPerView: 3,
-            // spaceBetween: 30
+        768: {
+            slidesPerView: 1.3,
+            slidesPerGroup: 1,
+            spaceBetween: 5
         },
 
         992: {
-            slidesPerView: 4,
-            // spaceBetween: 30
+            slidesPerView: 2.3,
+            slidesPerGroup: 2,
+            spaceBetween: 5
 
         },
+        1200: {
+            slidesPerView: 3.3,
+            slidesPerGroup: 3,
+            spaceBetween: 5
+        }
     }
 });
 
 
 
 const exibitionSwiper = new Swiper('.exibition__swiper', {
-    slidesPerView: 4,
-    // spaceBetween: 30,
+    slidesPerView: "auto",
+    spaceBetween: 5,
 
     // Navigation arrows
     navigation: {
@@ -718,23 +717,22 @@ const exibitionSwiper = new Swiper('.exibition__swiper', {
     breakpoints: {
         // when window width is >= 320px
         320: {
-            slidesPerView: 1,
-            //   spaceBetween: 20
+           slidesPerView: "auto",
+            spaceBetween: 5,
         },
-        // when window width is >= 480px
-        480: {
-            slidesPerView: 2,
-            //   spaceBetween: 30
-        },
-
-        700: {
-            slidesPerView: 3,
-            // spaceBetween: 30
+        768: {
+            slidesPerView: "auto",
+            spaceBetween: 5,
         },
 
         992: {
-            slidesPerView: 4,
-            // spaceBetween: 30
+            slidesPerView: "auto",
+            spaceBetween: 5,
+        },
+
+        1200: {
+            slidesPerView: "auto",
+            spaceBetween: 5,
 
         },
     }
@@ -780,7 +778,7 @@ const commandSwiper = new Swiper('.command__swiper', {
 });
 
 const servicesSwiper = new Swiper('.services__swiper', {
-    slidesPerView: 4,
+    slidesPerView: "auto",
     // spaceBetween: 30,
 
     // Navigation arrows
@@ -816,16 +814,7 @@ const servicesSwiper = new Swiper('.services__swiper', {
     }
 });
 
-const aimSwiper = new Swiper('.aim__swiper', {
-    slidesPerView: 1,
-    // spaceBetween: 30,
 
-    // Navigation arrows
-    navigation: {
-        nextEl: '.aim__swiper .swiper-button-next',
-        prevEl: '.aim__swiper .swiper-button-prev',
-    },
-});
 
 const historySwiperThumbs = new Swiper('.historys__swiper__thumbs', {
     slidesPerView: 10,
@@ -1013,8 +1002,150 @@ document.addEventListener("DOMContentLoaded", function () {
     // loader
     setTimeout(function () {
         anim();
+        mapInfo();
+        changeSlide();
     }, 400);
 });
+
+function changeSlide() {
+
+    const rangeSlide = document.querySelector('.rangeSlider__range');
+
+    const aimSwiper = new Swiper('.aim__swiper', {
+        centeredSlides: true,
+        slidesPerView: 2.5,
+        navigation: {
+            nextEl: '.aim__swiper .swiper-button-next',
+            prevEl: '.aim__swiper .swiper-button-prev',
+        },
+        breakpoints: {
+            320: {
+                centeredSlides: true,
+                slidesPerView: 1,
+            },
+            768: {
+                centeredSlides: true,
+                slidesPerView: 1,
+            },
+            1024: {
+                centeredSlides: true,
+                slidesPerView: 2.5,
+            },
+            1200: {
+                centeredSlides: true,
+                slidesPerView: 2.5,
+            },
+        },
+    });
+    if (rangeSlide) {
+        rangeSlide.addEventListener('change', function (e) {
+            e.preventDefault();
+            aimSwiper.slideTo(e.target.value);
+        })
+    }
+
+}
+
+function mapInfo() {
+    let map = document.querySelector('.uzb_map');
+
+    if (map) {
+
+        let cities = map.querySelectorAll('path');
+        let mapInfoUzi = document.querySelectorAll('.active__number.uzi');
+        let mapInfoRengen = document.querySelectorAll('.active__number.rengen');
+        let mapInfoMrt = document.querySelectorAll('.active__number.mrt');
+        let mapInfoMskt = document.querySelectorAll('.active__number.mskt');
+
+        const clearInfo = () => {
+            cities.forEach(city => city.classList.remove('active'));
+            mapInfoUzi.forEach(city => city.classList.remove('active'));
+            mapInfoRengen.forEach(city => city.classList.remove('active'));
+            mapInfoMrt.forEach(city => city.classList.remove('active'));
+            mapInfoMskt.forEach(city => city.classList.remove('active'));
+        }
+
+        map.addEventListener('mouseover', function (e) {
+            e.preventDefault();
+
+            if (e.target.tagName === 'path') {
+                let activeCity = e.target.getAttribute('name');
+
+                clearInfo();
+                e.target.classList.add('active');
+                mapInfoUzi.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+                mapInfoRengen.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+                mapInfoMrt.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+                mapInfoMskt.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+
+
+            }
+        });
+
+
+        cities.forEach(city => {
+            city.addEventListener('click', function (e) {
+                e.preventDefault();
+                let activeCity = e.target.getAttribute('name');
+
+                clearInfo();
+                e.target.classList.add('active');
+                mapInfoUzi.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+                mapInfoRengen.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+                mapInfoMrt.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+                mapInfoMskt.forEach(info => {
+                    if (info.classList.contains(activeCity)) {
+
+                        info.classList.add('active');
+                    }
+                });
+
+
+
+            })
+        })
+    }
+
+
+
+
+
+}
 
 function anim() {
     // init controller
