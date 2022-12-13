@@ -970,13 +970,17 @@ document.addEventListener("DOMContentLoaded", function () {
         anim();
         mapInfo();
         changeSlide();
-        sliders();
+        
     }, 400);
 });
-
+sliders();
 function sliders() {
+    
+    let commandName = document.querySelector('.command__members__top h3');
+    let commandPossition = document.querySelector('.command__members__top p');
+    let slides = document.querySelectorAll('.command__members__item');
     let slideName = anime({
-        targets: '.command__members__top h3',
+        targets: commandName,
         translateX: [-50, 0],
         opacity: [0, 1],
         duration: 300,
@@ -984,7 +988,7 @@ function sliders() {
         easing: 'linear',
     });
     let slidePosition = anime({
-        targets: '.command__members__top p',
+        targets: commandPossition,
         translateX: [50, 0],
         opacity: [0, 1],
         duration: 300,
@@ -1030,21 +1034,23 @@ function sliders() {
         },
         on: {
             init: function () {
-                if(window.innerWidth < 768) {
-                    
+                if (window.innerWidth > 767) {
+                    commandName.textContent = slides[0].querySelector('.command__members__name').textContent;
+                    commandPossition.textContent = slides[0].querySelector('.command__members__position').textContent;
+                    slideName.play();
+                    slidePosition.play();
                 }
 
-                document.querySelector('.command__members__top h3').textContent = this.slides[this.activeIndex].querySelector('.command__members__name').textContent;
-                document.querySelector('.command__members__top p').textContent = this.slides[this.activeIndex].querySelector('.command__members__position').textContent;
-                slideName.play();
-                slidePosition.play();
+
             },
             slideChange: function () {
+                if (window.innerWidth > 767) {
+                    commandName.textContent = this.slides[this.activeIndex].querySelector('.command__members__name').textContent;
+                    commandPossition.textContent = this.slides[this.activeIndex].querySelector('.command__members__position').textContent;
+                    slideName.play();
+                    slidePosition.play();
+                }
 
-                document.querySelector('.command__members__top h3').textContent = this.slides[this.activeIndex].querySelector('.command__members__name').textContent;
-                document.querySelector('.command__members__top p').textContent = this.slides[this.activeIndex].querySelector('.command__members__position').textContent;
-                slideName.play();
-                slidePosition.play();
             },
         },
     });
@@ -1085,7 +1091,7 @@ function changeSlide() {
     if (rangeSlide) {
         rangeSlide.addEventListener('change', function (e) {
             e.preventDefault();
-            aimSwiper.slideTo(e.target.value);
+            aimSwiper.slideTo(e.target.value / 4);
         })
     }
 
@@ -1365,50 +1371,6 @@ function anim() {
     }
 
 } 
-if(window.location.toString().indexOf('product.htm')>0)
-{
-    // TABS
-    
-    function tabs(headerSelector, tabSelector, contentSelector, activeClass, display='flex') {
-        const header = document.querySelector(headerSelector),
-              tab = document.querySelectorAll(tabSelector),
-              content = document.querySelectorAll(contentSelector)
-        function hideTabContent() {
-            content.forEach(item => {
-                item.style.display = 'none'
-            });
-            tab.forEach(item => {
-                item.classList.remove(activeClass)
-            });
-        }
-        function showTabContent(i = 0) {
-           content[i].style.display = display
-           tab[i].classList.add(activeClass)
-        }    
-        hideTabContent()
-        showTabContent()
-        header.addEventListener('click', e => {
-            const target = e.target
-            if (target.classList.contains(tabSelector.replace(/\./, '')) || 
-            target.parentNode.classList.contains(tabSelector.replace(/\./, ''))) {
-                tab.forEach((item, i) => {
-                    if ( target == item || target.parentNode == item ) {
-                        hideTabContent()
-                        showTabContent(i)
-                    }
-                });
-            }
-        })
-    }
-    
-    // ПЕРВЫЙ аргумент - класс всего нашего хедера табов.
-    // ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
-    // ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
-    // ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
-    tabs( '.tabs__header' ,'.tabs__header-item', '.tabs__content-item', 'active')
-}
-
- 
 var ZBRangeSlider = function(id) { 
     var self = this;
     var startX = 0, x = 0;
