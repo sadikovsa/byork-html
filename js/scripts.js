@@ -739,44 +739,6 @@ const exibitionSwiper = new Swiper('.exibition__swiper', {
 });
 
 
-
-const commandSwiper = new Swiper('.command__swiper', {
-    slidesPerView: 4,
-    // spaceBetween: 30,
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-
-    // Responsive breakpoints
-    breakpoints: {
-        // when window width is >= 320px
-        320: {
-            slidesPerView: 1,
-            //   spaceBetween: 20
-        },
-        // when window width is >= 480px
-        480: {
-            slidesPerView: 2,
-            //   spaceBetween: 30
-        },
-
-        700: {
-            slidesPerView: 3,
-            // spaceBetween: 30
-        },
-
-        992: {
-            slidesPerView: 4,
-            // spaceBetween: 30
-
-        },
-    }
-});
-
 const servicesSwiper = new Swiper('.services__swiper', {
     slidesPerView: "auto",
     // spaceBetween: 30,
@@ -817,6 +779,7 @@ const servicesSwiper = new Swiper('.services__swiper', {
 
 
 const historySwiperThumbs = new Swiper('.historys__swiper__thumbs', {
+    initialSlide: 5,
     slidesPerView: 10,
     spaceBetween: 35,
     freeMode: true,
@@ -837,6 +800,8 @@ const historySwiperThumbs = new Swiper('.historys__swiper__thumbs', {
         1200: {
             slidesPerView: 9,
             spaceBetween: 35,
+            initialSlide: 5,
+            
         },
     },
 });
@@ -844,6 +809,7 @@ const historySwiperThumbs = new Swiper('.historys__swiper__thumbs', {
 const historySwiper = new Swiper('.historys__swiper', {
     slidesPerView: 1,
     spaceBetween: 10,
+    initialSlide: 4,
     // Navigation arrows
     navigation: {
         nextEl: '.historys__swiper__controls .swiper-button-next',
@@ -1004,8 +970,87 @@ document.addEventListener("DOMContentLoaded", function () {
         anim();
         mapInfo();
         changeSlide();
+        sliders();
     }, 400);
 });
+
+function sliders() {
+    let slideName = anime({
+        targets: '.command__members__top h3',
+        translateX: [-50, 0],
+        opacity: [0, 1],
+        duration: 300,
+        autoplay: false,
+        easing: 'linear',
+    });
+    let slidePosition = anime({
+        targets: '.command__members__top p',
+        translateX: [50, 0],
+        opacity: [0, 1],
+        duration: 300,
+        autoplay: false,
+        easing: 'linear',
+    });
+
+    const commandSwiper = new Swiper('.command__members__slider', {
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.command__members .swiper-button-next',
+            prevEl: '.command__members .swiper-button-prev',
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1.1,
+                slidesPerGroup: 1,
+                spaceBetween: 20,
+                centeredSlides: true,
+            },
+            768: {
+                slidesPerView: 1.5,
+                slidesPerGroup: 1,
+                spaceBetween: 10,
+                centeredSlides: true,
+            },
+
+            992: {
+                slidesPerView: "auto",
+                slidesPerGroup: 1,
+                spaceBetween: 10,
+                centeredSlides: true,
+            },
+
+            1200: {
+                slidesPerView: "auto",
+                slidesPerGroup: 1,
+                spaceBetween: 20,
+                centeredSlides: true,
+            },
+        },
+        on: {
+            init: function () {
+                if(window.innerWidth < 768) {
+                    
+                }
+
+                document.querySelector('.command__members__top h3').textContent = this.slides[this.activeIndex].querySelector('.command__members__name').textContent;
+                document.querySelector('.command__members__top p').textContent = this.slides[this.activeIndex].querySelector('.command__members__position').textContent;
+                slideName.play();
+                slidePosition.play();
+            },
+            slideChange: function () {
+
+                document.querySelector('.command__members__top h3').textContent = this.slides[this.activeIndex].querySelector('.command__members__name').textContent;
+                document.querySelector('.command__members__top p').textContent = this.slides[this.activeIndex].querySelector('.command__members__position').textContent;
+                slideName.play();
+                slidePosition.play();
+            },
+        },
+    });
+}
+
+
 
 function changeSlide() {
 
@@ -1047,15 +1092,15 @@ function changeSlide() {
 }
 
 function mapInfo() {
-    let map = document.querySelector('.uzb_map');
+    let map = document.querySelector('#uzb_map');
 
     if (map) {
-
         let cities = map.querySelectorAll('path');
         let mapInfoUzi = document.querySelectorAll('.active__number.uzi');
         let mapInfoRengen = document.querySelectorAll('.active__number.rengen');
         let mapInfoMrt = document.querySelectorAll('.active__number.mrt');
         let mapInfoMskt = document.querySelectorAll('.active__number.mskt');
+        let mapPins = document.querySelectorAll('.map__circle');
 
         const clearInfo = () => {
             cities.forEach(city => city.classList.remove('active'));
@@ -1063,13 +1108,14 @@ function mapInfo() {
             mapInfoRengen.forEach(city => city.classList.remove('active'));
             mapInfoMrt.forEach(city => city.classList.remove('active'));
             mapInfoMskt.forEach(city => city.classList.remove('active'));
+            mapPins.forEach(city => city.classList.remove('active'));
         }
 
         map.addEventListener('mouseover', function (e) {
             e.preventDefault();
 
             if (e.target.tagName === 'path') {
-                let activeCity = e.target.getAttribute('name');
+                let activeCity = e.target.id;
 
                 clearInfo();
                 e.target.classList.add('active');
@@ -1095,6 +1141,12 @@ function mapInfo() {
                     if (info.classList.contains(activeCity)) {
 
                         info.classList.add('active');
+                    }
+                });
+                mapPins.forEach(pin => {
+                    if (pin.classList.contains(activeCity)) {
+
+                        pin.classList.add('active');
                     }
                 });
 
@@ -1106,8 +1158,7 @@ function mapInfo() {
         cities.forEach(city => {
             city.addEventListener('click', function (e) {
                 e.preventDefault();
-                let activeCity = e.target.getAttribute('name');
-
+                let activeCity = e.target.id;
                 clearInfo();
                 e.target.classList.add('active');
                 mapInfoUzi.forEach(info => {
@@ -1134,18 +1185,17 @@ function mapInfo() {
                         info.classList.add('active');
                     }
                 });
+                mapPins.forEach(pin => {
+                    if (pin.classList.contains(activeCity)) {
 
-
-
+                        pin.classList.add('active');
+                    }
+                });
             })
         })
     }
+};
 
-
-
-
-
-}
 
 function anim() {
     // init controller
