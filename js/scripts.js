@@ -7,9 +7,9 @@
     
     ok.addEventListener("click", function() {
         if(btn.classList.contains("active")){
-            console.log("ehhe")
+            
         }
-        console.log("salom")
+
     })
 
 
@@ -22,24 +22,39 @@ function burgerMenu() {
     const burger = document.querySelector(".burger");
     const menu = document.querySelector(".menu");
     const body = document.querySelector("body");
-    burger.addEventListener("click", () => {
-        if (!menu.classList.contains("active")) {
-            menu.classList.add("active");
-            burger.classList.add("active-burger");
-            body.classList.add("locked");
+//    burger.addEventListener("click", () => {
+//        if (!menu.classList.contains("active")) {
+//            menu.classList.add("active");
+//            burger.classList.add("active-burger");
+//            body.classList.add("locked");
+//        } else {
+//            menu.classList.remove("active");
+//            burger.classList.remove("active-burger");
+//            body.classList.remove("locked");
+//        }
+//    });
+
+    burger.addEventListener('click', function (e) {
+        if (burger.classList.contains('active-burger')) {
+            burger.classList.remove('active-burger');
+            menu.classList.remove('active');
+            body.classList.remove("locked");
+
         } else {
-            menu.classList.remove("active");
-            burger.classList.remove("active-burger");
-            body.classList.remove("locked");
+            burger.classList.add('active-burger');
+            menu.classList.add('active');
+            body.classList.add("locked");
+
         }
     });
-    menu.addEventListener("click", (event) => {
-        if (event.target) {
-            menu.classList.remove("active");
-            burger.classList.remove("active-burger");
-            body.classList.remove("locked");
-        }
-    });
+
+//    menu.addEventListener("click", (event) => {
+//        if (event.target) {
+//            menu.classList.remove("active");
+//            burger.classList.remove("active-burger");
+//            body.classList.remove("locked");
+//        }
+//    });
     // Вот тут мы ставим брейкпоинт навбара
     window.addEventListener("resize", () => {
         if (window.innerWidth > 991.98) {
@@ -54,7 +69,7 @@ burgerMenu();
 // Вызываем эту функцию, если нам нужно зафиксировать меню при скролле.
 function fixedNav() {
     const nav = document.querySelector("nav");
-    
+
     // тут указываем в пикселях, сколько нужно проскроллить что бы наше меню стало фиксированным
     const breakpoint = 1;
     if (window.scrollY >= breakpoint) {
@@ -76,8 +91,8 @@ catalogBtn.onmouseover = function () {
     catalogBtn.querySelector(".dropdown-btn-open").classList.add("active");
     // document.getElementById("bgGray").classList.toggle("bg-gray-active");
 };
-catalogBtn.addEventListener("click", function(){
-    if(document.getElementById("dropdownMenu").classList.contains("active-drop")){
+catalogBtn.addEventListener("click", function () {
+    if (document.getElementById("dropdownMenu").classList.contains("active-drop")) {
         catalogBtn.classList.remove("white");
         document.getElementById("dropdownMenu").classList.remove("active-drop");
         document.body.classList.remove("lock");
@@ -89,10 +104,7 @@ catalogBtn.addEventListener("click", function(){
 const header = document.querySelector('header');
 const drMenu = document.getElementById("dropdownMenu");
 
-drMenu.style.height = "calc(100vh - " + header.offsetHeight + "px)";
-
-
- 
+drMenu.style.height = "calc(100vh - " + header.offsetHeight + "px)"; 
 // Аккордеон
 function accordion() {
     const items = document.querySelectorAll('.accordion__item-trigger')
@@ -970,12 +982,24 @@ document.addEventListener("DOMContentLoaded", function () {
         anim();
         mapInfo();
         changeSlide();
-        
+        menu();
+
     }, 400);
 });
 sliders();
+
+function menu() {
+    const menuItems = document.querySelectorAll(".menu__item-link.with-submenu");
+    menuItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+        })
+        
+    });
+}
+
 function sliders() {
-    
+
     let commandName = document.querySelector('.command__members__top h3');
     let commandPossition = document.querySelector('.command__members__top p');
     let slides = document.querySelectorAll('.command__members__item');
