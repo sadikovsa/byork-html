@@ -83,21 +83,29 @@ window.addEventListener("scroll", fixedNav);
 // DROPDOWN CATALOG
 const catalogBtn = document.getElementById("dropdownBtn");
 
-catalogBtn.onmouseover = function () {
-    catalogBtn.classList.add("white");
-    document.getElementById("dropdownMenu").classList.add("active-drop");
-    document.body.classList.add("lock");
-    catalogBtn.querySelector(".dropdown-btn-close").classList.add("active");
-    catalogBtn.querySelector(".dropdown-btn-open").classList.add("active");
-    // document.getElementById("bgGray").classList.toggle("bg-gray-active");
-};
-catalogBtn.addEventListener("click", function () {
+//catalogBtn.onclick = function () {
+//    console.log('test');
+//    catalogBtn.classList.add("white");
+//    document.getElementById("dropdownMenu").classList.add("active-drop");
+//    document.body.classList.add("lock");
+//    catalogBtn.querySelector(".dropdown-btn-close").classList.add("active");
+//    catalogBtn.querySelector(".dropdown-btn-open").classList.add("active");
+//    // document.getElementById("bgGray").classList.toggle("bg-gray-active");
+//};
+catalogBtn.addEventListener("click", function (e) {
+    e.preventDefault();
     if (document.getElementById("dropdownMenu").classList.contains("active-drop")) {
         catalogBtn.classList.remove("white");
         document.getElementById("dropdownMenu").classList.remove("active-drop");
         document.body.classList.remove("lock");
         catalogBtn.querySelector(".dropdown-btn-close").classList.remove("active");
         catalogBtn.querySelector(".dropdown-btn-open").classList.remove("active");
+    }else {
+        catalogBtn.classList.add("white");
+    document.getElementById("dropdownMenu").classList.add("active-drop");
+    document.body.classList.add("lock");
+    catalogBtn.querySelector(".dropdown-btn-close").classList.add("active");
+    catalogBtn.querySelector(".dropdown-btn-open").classList.add("active");
     }
 })
 
@@ -983,6 +991,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mapInfo();
         changeSlide();
         menu();
+        countersNew();
 
     }, 400);
 });
@@ -990,12 +999,17 @@ sliders();
 
 function menu() {
     const menuItems = document.querySelectorAll(".menu__item-link.with-submenu");
-    menuItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
-        })
-        
+
+     window.addEventListener('click', function (e) {
+        if (!e.target.closest('.menu__item')) {
+            menuItems.forEach(item => {
+                item.nextElementSibling.checked = false;
+            });
+        }
+
     });
+
+
 }
 
 function sliders() {
@@ -1084,7 +1098,7 @@ function sliders() {
 
 function changeSlide() {
 
-    const rangeSlide = document.querySelector('.rangeSlider__range');
+    let rangeSlide = document.querySelector('.rangeSlider__range');
 
     const aimSwiper = new Swiper('.aim__swiper', {
         centeredSlides: true,
@@ -1092,6 +1106,11 @@ function changeSlide() {
         navigation: {
             nextEl: '.aim__swiper .swiper-button-next',
             prevEl: '.aim__swiper .swiper-button-prev',
+        },
+        pagination: {
+            el: ".mission__aim__pagi",
+            bulletActiveClass: 'active',
+            bulletClass: 'bullet'
         },
         breakpoints: {
             320: {
@@ -1111,11 +1130,18 @@ function changeSlide() {
                 slidesPerView: 2.5,
             },
         },
+        on: {
+            slideChange: function () {
+                rangeSlide.value = this.activeIndex;
+
+            },
+        }
     });
+
     if (rangeSlide) {
-        rangeSlide.addEventListener('change', function (e) {
+        rangeSlide.addEventListener('input', function (e) {
             e.preventDefault();
-            aimSwiper.slideTo(e.target.value / 4);
+            aimSwiper.slideTo(e.target.value);
         })
     }
 
@@ -1123,6 +1149,7 @@ function changeSlide() {
 
 function mapInfo() {
     let map = document.querySelector('#uzb_map');
+
 
     if (map) {
         let cities = map.querySelectorAll('path');
@@ -1225,6 +1252,77 @@ function mapInfo() {
         })
     }
 };
+
+
+function countersNew() {
+
+    let observer;
+
+    let statsSection = document.querySelector('.stats');
+    let detailSection = document.querySelector('.company__detail');
+
+    const speed = 200;
+
+    let options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0
+    }
+
+
+    if (statsSection) {
+
+        const counters = document.querySelectorAll('.stats__item-title');
+
+        function intersectionCallback(entries) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    counter(counters);
+                    observer.unobserve(statsSection);
+                }
+            });
+        }
+        observer = new IntersectionObserver(intersectionCallback, options);
+        observer.observe(statsSection);
+    }
+
+    if (detailSection) {
+
+        const counters = document.querySelectorAll('.detail__counter');
+
+        function intersectionCallback(entries) {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    console.log('test');
+                    counter(counters);
+                    observer.unobserve(detailSection);
+                }
+            });
+        }
+        observer = new IntersectionObserver(intersectionCallback, options);
+        observer.observe(detailSection);
+    }
+
+    function counter(counters) {
+        counters.forEach(counter => {
+            const animate = () => {
+                const value = +counter.getAttribute('akhi');
+                const data = +counter.innerText;
+
+                const time = value / speed;
+                if (data < value) {
+                    counter.innerText = Math.ceil(data + time);
+                    setTimeout(animate, 1);
+                } else {
+                    counter.innerText = value;
+                }
+
+            }
+
+            animate();
+        });
+    }
+}
 
 
 function anim() {

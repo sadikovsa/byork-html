@@ -108,12 +108,13 @@
                             <button class="dropdown-btn-toggle dropdown-btn-open">
                                 <img src="./img/header/4dots-icon.png" alt="icon" />
                                 Каталог товаров</button>
-                            <button class="dropdown-btn-toggle dropdown-btn-close"><img src='./img/close.png'> Закрыть</button>
+                            <button class="dropdown-btn-toggle dropdown-btn-close"><img src='./img/close-mini.jpg'> Закрыть</button>
                         </a>
                     </li>
                     <li class="menu__item"><a href="index.html" class="menu__item-link" data-scroll>Главная</a></li>
                     <li class="menu__item">
-                        <a href="#" class="menu__item-link with-submenu" data-scroll="">О компании <img src="./img/arrow-white.png" alt="icon"></a>
+                        <label class="menu__item-link with-submenu" data-scroll for="submenu">О компании <img src="./img/arrow-white.png" alt="icon"></label>
+                        <input type="checkbox" id="submenu" name="submenu">
                         <ul class="submenu">
                             <li class="submenu__item">
                                 <a href="mission.html" class="submenu__link">О компании</a>
@@ -129,7 +130,6 @@
                             </li>
                         </ul>
                     </li>
-                    <li class="menu__item"><a href="services.html" class="menu__item-link" data-scroll>Сервисный отдел</a></li>
                     <li class="menu__item"><a href="partners.html" class="menu__item-link" data-scroll>Партнеры</a></li>
                     <li class="menu__item"><a href="contacts.html" class="menu__item-link" data-scroll>Контакты</a></li>
                     <li class="menu__item"><a href="blog-list.html" class="menu__item-link" data-scroll>Блог</a></li>
@@ -381,7 +381,7 @@
 
 		<!-- Hero -->
 		<section class="hero">
-    
+
     <div class="pop-btn" id="popBtn">
         <p class="pop-btn__text">
             Узнайте <span class="bold">как выбрать подходящее оборудование</span> и быстро окупить его.
@@ -390,54 +390,54 @@
             </button>
         </p>
     </div>
-    
+
     <div class="pop-btn__bottom-wrapper">
         <button class="pop-btn__bottom"><img src="./img/catalog-list/catalog-1.png" alt="" width="60" height="60"></button>
     </div>
-    
+
     <div class="container">
-        
+
         <div class="hero__wrapper">
-            
+
             <!-- Slider main container -->
             <div class="hero__swiper swiper">
-                
+
+<!--
                 <h1 class="hero__title title">
                     <img src="./img/hero/big-logo.png" alt="logo">
                     главный дистрибьютор ведущих брендов медицинского оборудования
                 </h1>
-                
+-->
+
                 <div class="hero__slider swiper-wrapper">
-                    
+
                     <div class="hero__slide swiper-slide"></div>
                     <div class="hero__slide swiper-slide"></div>
                     <div class="hero__slide swiper-slide"></div>
-                    
+
                 </div>
-                
+
                 <div class="hero__pagination swiper-pagination"></div>
-                
+
                 <div class="hero__btns">
                     <div class="hero-btn-prev swiper-button-prev">
                         <svg width="24" height="24" fill="white">
-                            <path
-                            d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
+                            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                         </svg>
                     </div>
                     <div class="hero-btn-next swiper-button-next">
                         <svg width="24" height="24" fill="white">
-                            <path
-                            d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
+                            <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z" />
                         </svg>
                     </div>
                 </div>
             </div>
-            
+
             <div class="hero__content">
                 <p class="hero__text">
                     Оставьте заявку и узнайте <span>как увеличить прибыль компании на +20</span>
                 </p>
-                
+
                 <a class="hero__btn btn" href="#">Оставить заявку</a>
             </div>
         </div>
@@ -449,7 +449,7 @@
     let popBtnClose = document.querySelector('.pop-btn__close');
     let popBtnBottom = document.querySelector('.pop-btn__bottom');
     let popBtnBottomWrapper = document.querySelector('.pop-btn__bottom-wrapper');
-    popBtnClose.addEventListener('click', function () {
+    popBtnClose.addEventListener('click', function() {
         setTimeout(() => {
             popBtn.style.display = 'none';
         }, 1);
@@ -461,6 +461,13 @@
             popBtn.style.display = 'block';
         }, 1);
     })
+
+    setInterval(function() {
+        popBtnBottomWrapper.classList.remove("pop-btn__active")
+        setTimeout(() => {
+            popBtn.style.display = 'block';
+        }, 1);
+    }, 40000);
 </script>
 
 		<!-- Catalog-list -->
@@ -469,135 +476,133 @@
 
         <div class="catalog-list__wrapper">
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Акушерство и гинекология</p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 9 товаров</a>
+                    <span class="catalog-list__item-link">всего 9 товаров</span>
                 </div>
-
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-1.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Гибкая эндоскопия</p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 2 товара</a>
+
+                    <span class="catalog-list__item-link">всего 2 товара</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-2.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Мобильные кабинеты </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 3 товара</a>
+
+                    <span class="catalog-list__item-link">всего 3 товара</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-3.png" alt="catalog-list-img">
-            </div>
-            
-            <div class="catalog-list__item">
+            </a>
+
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Оторино- ларингология </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 8 товаров</a>
+
+                    <span class="catalog-list__item-link">всего 8 товаров</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-4.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Реанимация </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 2 товара</a>
+
+                    <span class="catalog-list__item-link">всего 2 товара</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-5.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Рентгенология и томография</p>
-                    
-                    <a class="catalog-list__item-link" href="02_01.html">всего 3 товара</a>
+
+                    <span class="catalog-list__item-link">всего 3 товара</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-6.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Скорая помощь </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 1 товар</a>
+
+                    <span class="catalog-list__item-link">всего 1 товар</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-7.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Стерилизация </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 6 товаров</a>
+
+                    <span class="catalog-list__item-link">всего 6 товаров</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-8.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Урология </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 5 товаров</a>
+
+                    <span class="catalog-list__item-link">всего 5 товаров</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-9.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Физиотерапия и реабилитация </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 4 товара</a>
+
+                    <span class="catalog-list__item-link">всего 4 товара</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-10.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Функциональная диагностика </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 2 товаров</a>
+
+                    <span class="catalog-list__item-link">всего 2 товаров</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-11.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Хирургия </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 7 товаров</a>
+
+                    <span class="catalog-list__item-link">всего 7 товаров</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-12.png" alt="catalog-list-img">
-            </div>
+            </a>
 
-            <div class="catalog-list__item">
+            <a href="#" class="catalog-list__item">
                 <div class="catalog-list__item-box">
                     <p class="catalog-list__item-title">Ветеринария </p>
-                    
-                    <a class="catalog-list__item-link" href="#">всего 3 товара</a>
+
+                    <span class="catalog-list__item-link">всего 3 товара</span>
                 </div>
 
                 <img class="catalog-list__item-img" src="./img/catalog-list/catalog-13.png" alt="catalog-list-img">
-            </div>
+            </a>
 
             <div class="catalog-list__offer catalog-list__item">
 
@@ -706,94 +711,93 @@
         <h2 class="services__title section-title">Услуги которые предоставляем</h2>
 
         <div class="services__wrapper">
-
-            <div class="services__item ser-1">
+            <a href="#" class="services__item ser-1">
                 <p class="services__item-title">Ввод в эксплуатацию оборудования </p>
 
                 <p class="services__item-text">Равным образом дальнейшее развитие различных форм деятельности играет важную ... </p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
-            <div class="services__item ser-2">
+            <a href="#" class="services__item ser-2">
                 <p class="services__item-title">Техническое обслуживание медицинской техники </p>
 
                 <p class="services__item-text">Повседневная практика показывает, что укрепление и развитие структуры в значитель ...</p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
-            <div class="services__item ser-3">
+            <a href="#" class="services__item ser-3">
                 <p class="services__item-title">Поставка запасных частей, принадлежностей, расходных материалов для медицинской техники и мед. оборудования</p>
 
                 <p class="services__item-text">Идейные соображения высшего порядка, а также консультация с широким активом играет важную роль в формировании существенных финансовых.</p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
-            <div class="services__item ser-4">
+            <a href="#" class="services__item ser-4">
                 <p class="services__item-title">Предоставление услуг по разовому ремонту </p>
 
                 <p class="services__item-text">Сложившаяся структура организации позволяет выполнять важные задания по разработке направлений прогрессивного развития.</p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
-            <div class="services__item ser-5">
+            <a href="#" class="services__item ser-5">
                 <p class="services__item-title">Долгосрочные сервисные контракты </p>
 
                 <p class="services__item-text">Высшего порядка, а также сложившаяся структура организации способствует подготовки и реализации позиций, занимаемых участниками в ...</p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
-            <div class="services__item ser-6">
+            <a href="#" class="services__item ser-6">
                 <p class="services__item-title">Инструктаж медицинского персонала по эксплуатации оборудования </p>
 
                 <p class="services__item-text">Не следует, однако забывать, что рамки и место обучения кадров позволяет выполнять важные задания по разработке существенных финансо ...</p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
-            <div class="services__item ser-7">
+            <a href="#" class="services__item ser-7">
                 <p class="services__item-title">Метрологическое обслуживание средств измерений </p>
 
                 <p class="services__item-text">Идейные соображения высшего порядка, а также консультация с широким активом играет важную роль в формировании существенных финансовых.</p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
-            <div class="services__item ser-8">
+            <a href="#" class="services__item ser-8">
                 <p class="services__item-title">Предоставление подменного оборудования на время ремонта  </p>
 
                 <p class="services__item-text">Задача организации, в особенности же дальнейшее развитие различных форм деятельности играет важную роль в формировании позиций, занимаемых ...</p>
 
-                <a class="services__item-btn" href="#">
+                <span class="services__item-btn">
                     <img class="services__item-arrow" src="./img/services/arrow-1.png" alt="arrow">
                     подробнее
-                </a>
-            </div>
+                </span>
+            </a>
 
         </div>
     </div>
@@ -847,32 +851,6 @@
         
     </div>
 </section>
-
-<script>
-    const counters = document.querySelectorAll('.stats__item-title');
-    const speed = 200;
-    
-    counters.forEach( counter => {
-        const animate = () => {
-            const value = +counter.getAttribute('akhi');
-            const data = +counter.innerText;
-            
-            const time = value / speed;
-            if(data < value) {
-                counter.innerText = Math.ceil(data + time);
-                setTimeout(animate, 1);
-            }else{
-                counter.innerText = value;
-            }
-            
-        }
-        
-        animate();
-    });
-    
-    
-    
-</script>
 
 		<!-- Events -->
 		<section class="events">

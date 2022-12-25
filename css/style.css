@@ -806,6 +806,7 @@ nav {
       flex-wrap: wrap;
   gap: 6px;
   padding-bottom: 25px;
+  z-index: 100;
 }
 
 .menu::-webkit-scrollbar {
@@ -833,12 +834,12 @@ nav {
   position: relative;
 }
 
-.menu__item:hover .submenu,
-.menu__item:hover ul,
-.menu__item:active .submenu,
-.menu__item:active ul,
-.menu__item:focus .submenu,
-.menu__item:focus ul {
+.menu__item input {
+  display: none;
+}
+
+.menu__item input:checked ~ .submenu,
+.menu__item input:checked ~ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -859,6 +860,11 @@ nav {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.menu__item .submenu li:first-child a,
+.menu__item ul li:first-child a {
+  margin: 6px 0 3px;
 }
 
 .menu__item .submenu li a,
@@ -916,10 +922,12 @@ nav {
           justify-content: center;
   position: relative;
   white-space: nowrap;
+  margin: 0;
+  cursor: pointer;
 }
 
 .menu__item-link img {
-  max-width: 12px;
+  max-width: 9px;
 }
 
 .menu__item-link:hover {
@@ -936,25 +944,29 @@ nav {
   left: 0;
 }
 
-.menu__item:nth-child(1) a {
+.menu__item:nth-child(1) a,
+.menu__item:nth-child(1) label {
   padding: 14px 14px !important;
   background: -webkit-gradient(linear, left top, right top, from(#059272), to(#059272));
   background: -o-linear-gradient(left, #059272, #059272);
   background: linear-gradient(90deg, #059272, #059272);
 }
 
-.menu__item:nth-child(1) a.white {
+.menu__item:nth-child(1) a.white,
+.menu__item:nth-child(1) label.white {
   background: #fff;
   color: #131418;
 }
 
-.menu__item:nth-child(2) a {
+.menu__item:nth-child(2) a,
+.menu__item:nth-child(2) label {
   background: -webkit-gradient(linear, left top, right top, from(#048a75), to(#048577));
   background: -o-linear-gradient(left, #048a75, #048577);
   background: linear-gradient(90deg, #048a75, #048577);
 }
 
-.menu__item:nth-child(3) a {
+.menu__item:nth-child(3) a,
+.menu__item:nth-child(3) label {
   background: -webkit-gradient(linear, left top, right top, from(#048477), to(#047d7a));
   background: -o-linear-gradient(left, #048477, #047d7a);
   background: linear-gradient(90deg, #048477, #047d7a);
@@ -1286,7 +1298,7 @@ nav {
 .pop-btn {
   position: fixed;
   z-index: 4;
-  right: 40px;
+  left: 40px;
   bottom: 36px;
   max-width: 400px;
   width: 100%;
@@ -1314,10 +1326,10 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  right: 57px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  left: 57px;
   bottom: 31px;
   z-index: 9999;
   visibility: hidden;
@@ -1391,6 +1403,7 @@ nav {
   height: 150px;
   border-radius: 10px;
   background: #ffffff;
+  color: #000;
   padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1765,8 +1778,18 @@ nav {
 }
 
 .stats__item {
-  max-width: 230px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .stats .stats__item-wrapper {
@@ -1776,23 +1799,27 @@ nav {
   font-weight: 700;
   font-size: 54px;
   line-height: 40px;
-  margin-bottom: 25px;
   color: #004d8c;
 }
 
 .stats__item-title {
   font-weight: 700;
   font-size: 54px;
-  line-height: 40px;
-  margin-bottom: 25px;
+  line-height: 1;
   color: #004d8c;
-  margin-right: 32px;
+}
+
+.stats__item-title + p:not(.stats__item-text) {
+  margin-left: 25px;
+  line-height: 1;
 }
 
 .stats__item-text {
   border-left: 2px solid #e7e9ec;
   height: 50px;
   padding-left: 20px;
+  margin-left: 0;
+  margin-top: 25px;
 }
 
 .stats__item-text span {
@@ -2702,6 +2729,71 @@ nav {
   position: relative;
 }
 
+.mission__aim__pagi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0 !important;
+}
+
+.mission__aim__pagi .bullet {
+  border-radius: 0;
+  width: 2px;
+  height: 230px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(53, 161, 250, 0)), to(#35A1FA));
+  background: -o-linear-gradient(top, rgba(53, 161, 250, 0) 0%, #35A1FA 100%);
+  background: linear-gradient(180deg, rgba(53, 161, 250, 0) 0%, #35A1FA 100%);
+  opacity: 0.2;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mission__aim__pagi .bullet:first-child {
+  margin: 0 auto 0 20px;
+}
+
+.mission__aim__pagi .bullet:last-child {
+  margin: 0 20px 0 auto;
+}
+
+.mission__aim__pagi .bullet.active {
+  width: 4px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(53, 161, 250, 0)), to(#35A1FA));
+  background: -o-linear-gradient(top, rgba(53, 161, 250, 0) 0%, #35A1FA 100%);
+  background: linear-gradient(180deg, rgba(53, 161, 250, 0) 0%, #35A1FA 100%);
+  opacity: 1;
+}
+
+.mission__aim__pagi .bullet::before,
+.mission__aim__pagi .bullet::after {
+  content: "";
+  display: block;
+  height: 90%;
+  width: 2px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(53, 161, 250, 0)), to(#35A1FA));
+  background: -o-linear-gradient(top, rgba(53, 161, 250, 0) 0%, #35A1FA 100%);
+  background: linear-gradient(180deg, rgba(53, 161, 250, 0) 0%, #35A1FA 100%);
+  opacity: 0.8;
+  position: absolute;
+  bottom: 0;
+}
+
+.mission__aim__pagi .bullet::before {
+  left: -17px;
+}
+
+.mission__aim__pagi .bullet::after {
+  right: -17px;
+}
+
 .mission__aim__controls {
   position: absolute;
   top: 50%;
@@ -2905,6 +2997,15 @@ nav {
           break-inside: avoid;
   text-align: center;
   height: 250px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.mission__features__item:hover {
+  -webkit-box-shadow: 1px 1px 10px 1px #0000002c;
+          box-shadow: 1px 1px 10px 1px #0000002c;
 }
 
 .mission__features__item:nth-child(2),
@@ -3574,6 +3675,15 @@ nav {
   border-radius: 10px;
   background-color: #fff;
   text-align: right;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.detail__item:hover {
+  -webkit-box-shadow: 1px 1px 10px 1px #0000002c;
+          box-shadow: 1px 1px 10px 1px #0000002c;
 }
 
 .detail__item:first-child {
@@ -8943,12 +9053,8 @@ label {
     display: block;
   }
 
-  .menu__item:hover .submenu,
-  .menu__item:hover ul,
-  .menu__item:active .submenu,
-  .menu__item:active ul,
-  .menu__item:focus .submenu,
-  .menu__item:focus ul {
+  .menu__item input:checked ~ .submenu,
+  .menu__item input:checked ~ ul {
     height: 100%;
   }
 
@@ -8960,6 +9066,16 @@ label {
     display: flex;
     height: 0;
     overflow: hidden;
+  }
+
+  .menu__item .submenu li:first-child a,
+  .menu__item ul li:first-child a {
+    margin: 15px 0 0 0;
+  }
+
+  .menu__item .submenu li a,
+  .menu__item ul li a {
+    margin: 15px 0 0 0;
   }
 
   .menu__item-link {
@@ -9249,9 +9365,15 @@ label {
     background: #131418;
     left: 0;
     top: 0;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     display: none;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    padding: 25px 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .menu.active {
@@ -9261,15 +9383,16 @@ label {
     left: 0;
     top: 0;
     height: 100vh;
+    overflow-y: scroll;
     width: 100vw;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
     pointer-events: all;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -9351,7 +9474,7 @@ label {
   }
 
   .menu__item {
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .menu__item-link {
